@@ -1,10 +1,21 @@
+import java.util.Scanner;
+
 public class menusClientes {
+     Scanner sc = new Scanner(System.in);
 
-    public void mostrarMenu()
+    
+    
+    public void mostrarMenu(){
 
-    {int numPedido = 5;
+    int numPedido = 0;
+    
 
-        do { System.out.println("1. Helados fríos");
+        do 
+        { 
+            System.out.println("elige un apartado del menú del 1 al 5");
+        numPedido = sc.nextInt();
+            
+        System.out.println("1. Helados fríos");
  
          System.out.println("---------------");
          System.out.println("2. Granizao");
@@ -16,11 +27,11 @@ public class menusClientes {
          System.out.println("4. Bebias");
  
          System.out.println("---------------");
-         System.out.println("Escribe una opción 1-4 o pulse 0 para salir del menú");
+         System.out.println("5. Salir del menú");
          
           
          
-        } while (numPedido != 0);
+        } while (numPedido != 5);
         
      }
 }
