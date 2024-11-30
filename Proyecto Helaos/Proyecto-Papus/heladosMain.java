@@ -4,14 +4,14 @@ public class heladosMain {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         menusClientes menuClientes1 = new menusClientes();
-
-        menuMain(sc,menuClientes1);
+        Administrador menuAdministrador = new Administrador();
+        menuMain(sc,menuClientes1,menuAdministrador);
 
         
         
         
     }
-    public static void menuMain (Scanner sc,menusClientes menuClientes1)
+    public static void menuMain (Scanner sc,menusClientes menuClientes1, Administrador menuAdministrador)
     {
         System.out.println("¡Bienvenido a Heladeria Papus!");
 
@@ -35,21 +35,22 @@ public class heladosMain {
             System.out.println("Opción invalida");  
           }
           
-          elegirMenuMain(sc, numPedido, menuClientes1);
+          elegirMenuMain(sc, numPedido, menuClientes1,menuAdministrador);
           
 
         } while (numPedido != 3 && numPedido <3 && numPedido > 0) ;
         
     }
 
-    public static void elegirMenuMain (Scanner sc,int numPedido,menusClientes menuClientes1)
+    public static void elegirMenuMain (Scanner sc,int numPedido,menusClientes menuClientes1, Administrador menuAdministrador)
     {
         switch (numPedido) 
         {
             case 1:menuClientes1.mostrarMenu();
             break;
 
-            case 2:System.out.println("trabajando en ello xd");
+            case 2:
+                menuAdministrador.ingresoAdministrador();
             break;
         
             default:
