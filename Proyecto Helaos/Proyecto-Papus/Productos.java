@@ -52,7 +52,7 @@ public class Productos {
     public void getHelados() {
         int numElegir = 0;
         do {
-            System.out.println("Elige una opción, salir 0");
+            System.out.println("Elige una opción, salir (0)");
             System.out.println(" ");
 
             for (int i = 0; i < helados.length; i++) {
@@ -69,7 +69,7 @@ public class Productos {
     public void getGranizados() {
         int numElegir = 0;
         do {
-            System.out.println("Elige una opción, salir 0");
+            System.out.println("Elige una opción, salir (0)");
             System.out.println(" ");
 
             for (int a = 0; a < granizado.length; a++) {
@@ -86,7 +86,7 @@ public class Productos {
     public void getGofres() {
         int numElegir = 0;
         do {
-            System.out.println("Elige una opción, salir 0");
+            System.out.println("Elige una opción, salir (0)");
             System.out.println(" ");
 
 
@@ -105,7 +105,7 @@ public class Productos {
     public void getBebidas() {
         int numElegir = 0;
         do {
-            System.out.println("Elige una opción, salir 0");
+            System.out.println("Elige una opción, salir (0)");
             System.out.println(" ");
 
 
@@ -121,5 +121,5 @@ public class Productos {
         } while (numElegir != 0);
     }
 
-
+    
 }

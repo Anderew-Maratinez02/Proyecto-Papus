@@ -5,6 +5,7 @@ public class Administrador {
     private int pass_Administrador;
     private boolean confirmacionDeAcceso;
 
+
     public void ingresoAdministrador() {
         System.out.println("Ingrese el pin de acceso");
         pass_Administrador = sc.nextInt();

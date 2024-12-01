@@ -26,7 +26,7 @@ public class heladosMain {
         System.out.println("elige un apartado del menú del 1 al 3");
         System.out.println(" ");
             
-         System.out.println("1. Menu para clientes");
+         System.out.println("1. Menú para clientes");
          System.out.println("---------------");
          System.out.println("2. Administrador");
          System.out.println("---------------");
@@ -36,7 +36,7 @@ public class heladosMain {
 
           if (numPedido > 3 || numPedido < 0) 
           {
-            System.out.println("Opción invalida");  
+            System.out.println("Opción inválida");
           }
           
           elegirMenuMain(sc, numPedido, menuClientes1,menuAdministrador);

@@ -22,13 +22,13 @@ public class menusClientes {
             System.out.println("1. Helados fríos");
 
             System.out.println("---------------");
-            System.out.println("2. Granizao");
+            System.out.println("2. Granizados");
 
             System.out.println("---------------");
             System.out.println("3. Gofres");
 
             System.out.println("---------------");
-            System.out.println("4. Bebias");
+            System.out.println("4. Bebidas");
 
             System.out.println("---------------");
             System.out.println("5. Salir del menú");
@@ -39,7 +39,7 @@ public class menusClientes {
                 System.out.println("Opción invalida");
             }
 
-            elegirMenuClientes(sc, numPedido, productos);
+            elegirMenuClientes(sc, numPedido,  productos);
 
         } while (numPedido != 5 && numPedido < 5 && numPedido > 0);
 
