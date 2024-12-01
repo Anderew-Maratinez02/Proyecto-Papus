@@ -20,7 +20,9 @@ new String[] {"Colaculo","Zumo melocotón","Ron cola"} );
  
         do 
         { 
+        System.out.println(" ");
         System.out.println("elige un apartado del menú del 1 al 5");
+        System.out.println(" ");
             
         System.out.println("1. Helados fríos");
  
@@ -42,8 +44,30 @@ new String[] {"Colaculo","Zumo melocotón","Ron cola"} );
           {
             System.out.println("Opción invalida");  
           }
+
+          elegirMenuClientes(sc, numPedido, productos);
          
         } while (numPedido != 5 && numPedido <5 && numPedido > 0) ;
         
      }
+     public static void elegirMenuClientes (Scanner sc,int numPedido,Productos productos)
+    {
+        switch (numPedido) 
+        {
+            case 1: productos.getHelados();
+            break;
+
+            case 2:productos.getGranizados();
+            break;
+
+            case 3: productos.getGofres();
+            break;
+
+            case 4: productos.getBebidas();
+            break;
+        
+            default:
+                break;
+        }
+    }
 }

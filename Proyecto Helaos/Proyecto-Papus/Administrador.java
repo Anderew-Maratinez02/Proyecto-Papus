@@ -16,8 +16,8 @@ public class Administrador {
             confirmacionDeAcceso = false;
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> a942dc1 (class Productos V1.6 AMV)
+
+
+
+

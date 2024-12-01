@@ -5,6 +5,8 @@ public class heladosMain {
         Scanner sc = new Scanner(System.in);
         menusClientes menuClientes1 = new menusClientes();
         Administrador menuAdministrador = new Administrador();
+
+        
         menuMain(sc,menuClientes1,menuAdministrador);
 
         
@@ -20,10 +22,12 @@ public class heladosMain {
 
         do 
         { 
-        System.out.println("elige un apartado del menú del 1 al 5");
+            System.out.println(" ");
+        System.out.println("elige un apartado del menú del 1 al 3");
+        System.out.println(" ");
             
          System.out.println("1. Menu para clientes");
-       
+         System.out.println("---------------");
          System.out.println("2. Administrador");
          System.out.println("---------------");
          System.out.println("3. Salir del menú");
