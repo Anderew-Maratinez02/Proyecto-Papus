@@ -4,6 +4,12 @@ public class Administrador {
     Scanner sc = new Scanner(System.in);
     private int pass_Administrador;
     private boolean confirmacionDeAcceso;
+    
+    Productos productos = new Productos(
+        new String[]{"Helado de fresa", "Helado de limón", "Helado de nieve"},
+        new String[]{"Granizado de piña", "Granizado de Cola", "Granizado de kiwi"},
+        new String[]{"Gofre de chocolate", "Gofre de vainilla", "Gofre Mixto"},
+        new String[]{"Colaculo", "Zumo melocotón", "Ron cola"});
 
 
     public void ingresoAdministrador() {
