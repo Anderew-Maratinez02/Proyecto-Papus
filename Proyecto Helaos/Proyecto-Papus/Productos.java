@@ -121,5 +121,39 @@ public class Productos {
         } while (numElegir != 0);
     }
 
+    public Scanner getSc() {
+        return sc;
+    }
 
+    public void setSc(Scanner sc) {
+        this.sc = sc;
+    }
+
+    public void setHelados(String[] helados) {
+        this.helados = helados;
+    }
+
+    public String[] getGranizado() {
+        return granizado;
+    }
+
+    public void setGranizado(String[] granizado) {
+        this.granizado = granizado;
+    }
+
+    public void setGofres(String[] gofres) {
+        this.gofres = gofres;
+    }
+
+    public void setBebidas(String[] bebidas) {
+        this.bebidas = bebidas;
+    }
+
+    public double[] getPrecioHelados() {
+        return precioHelados;
+    }
+
+    public void setPrecioHelados(double[] precioHelados) {
+        this.precioHelados = precioHelados;
+    }
 }
