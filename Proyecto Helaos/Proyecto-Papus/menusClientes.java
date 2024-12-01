@@ -7,7 +7,7 @@ public class menusClientes {
             new String[]{"Granizado de piña", "Granizado de Cola", "Granizado de kiwi"},
             new String[]{"Gofre de chocolate", "Gofre de vainilla", "Gofre Mixto"},
             new String[]{"Colaculo", "Zumo melocotón", "Ron cola"});
-
+    //Cambiar esto
 
     public void mostrarMenu() {
 
