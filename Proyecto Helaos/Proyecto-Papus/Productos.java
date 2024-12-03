@@ -1,7 +1,8 @@
-import java.util.Scanner;
+
 
 public class Productos {
-    Scanner sc = new Scanner(System.in);
+    CajaDeHerramientas ch = new CajaDeHerramientas();
+
     public String[] helados;
     public String[] granizado;
     public String[] gofres;
@@ -10,11 +11,14 @@ public class Productos {
     public double precioHelados[];
 
 
-    public Productos(String[] helados, String[] granizado, String[] gofres, String[] bebidas) {
-        this.helados = helados;
-        this.granizado = granizado;
-        this.gofres = gofres;
-        this.bebidas = bebidas;
+
+
+    public Productos() 
+    {
+        this.helados =  new String[]{"Helado de fresa", "Helado de limón", "Helado de nieve"};
+        this.granizado =  new String[]{"Granizado de piña", "Granizado de Cola", "Granizado de kiwi"};
+        this.gofres =  new String[]{"Gofre de chocolate", "Gofre de vainilla", "Gofre Mixto"};
+        this.bebidas =  new String[]{"Colaculo", "Zumo melocotón", "Ron cola"};
     }
 
     public void getTodosLosProductos() {
@@ -36,10 +40,10 @@ public class Productos {
 
     }
 
-    public void cambiarNombreProductos() {
+    public void cambiarNombreProductos(int num) {
         int numElegir = 0;
         System.out.println("Elije que apartado del producto 1-4");
-        numElegir = sc.nextInt();
+        numElegir = num;
 
         if (numElegir == 1) {
             for (int i = 0; i < helados.length; i++) {
@@ -60,7 +64,7 @@ public class Productos {
                 System.out.println("-------------------");
 
             }
-            numElegir = sc.nextInt();
+            numElegir = ch.pedirNumero();
 
         } while (numElegir != 0);
 
@@ -77,7 +81,7 @@ public class Productos {
                 System.out.println("-------------------");
 
             }
-            numElegir = sc.nextInt();
+            numElegir = ch.pedirNumero();
 
         } while (numElegir != 0);
     }
@@ -97,7 +101,7 @@ public class Productos {
 
 
             }
-            numElegir = sc.nextInt();
+            numElegir = ch.pedirNumero();
 
         } while (numElegir != 0);
     }
@@ -116,44 +120,10 @@ public class Productos {
 
 
             }
-            numElegir = sc.nextInt();
+            numElegir = ch.pedirNumero();;
 
         } while (numElegir != 0);
     }
 
-    public Scanner getSc() {
-        return sc;
-    }
 
-    public void setSc(Scanner sc) {
-        this.sc = sc;
-    }
-
-    public void setHelados(String[] helados) {
-        this.helados = helados;
-    }
-
-    public String[] getGranizado() {
-        return granizado;
-    }
-
-    public void setGranizado(String[] granizado) {
-        this.granizado = granizado;
-    }
-
-    public void setGofres(String[] gofres) {
-        this.gofres = gofres;
-    }
-
-    public void setBebidas(String[] bebidas) {
-        this.bebidas = bebidas;
-    }
-
-    public double[] getPrecioHelados() {
-        return precioHelados;
-    }
-
-    public void setPrecioHelados(double[] precioHelados) {
-        this.precioHelados = precioHelados;
-    }
 }
