@@ -1,5 +1,3 @@
-
-
 public class Productos {
     CajaDeHerramientas ch = new CajaDeHerramientas();
 
@@ -11,14 +9,11 @@ public class Productos {
     public double precioHelados[];
 
 
-
-
-    public Productos() 
-    {
-        this.helados =  new String[]{"Helado de fresa", "Helado de limón", "Helado de nieve"};
-        this.granizado =  new String[]{"Granizado de piña", "Granizado de Cola", "Granizado de kiwi"};
-        this.gofres =  new String[]{"Gofre de chocolate", "Gofre de vainilla", "Gofre Mixto"};
-        this.bebidas =  new String[]{"Colaculo", "Zumo melocotón", "Ron cola"};
+    public Productos() {
+        this.helados = new String[]{"Helado de fresa", "Helado de limón", "Helado de nieve"};
+        this.granizado = new String[]{"Granizado de piña", "Granizado de Cola", "Granizado de kiwi"};
+        this.gofres = new String[]{"Gofre de chocolate", "Gofre de vainilla", "Gofre Mixto"};
+        this.bebidas = new String[]{"Colaculo", "Zumo melocotón", "Ron cola"};
     }
 
     public void getTodosLosProductos() {
@@ -120,7 +115,7 @@ public class Productos {
 
 
             }
-            numElegir = ch.pedirNumero();;
+            numElegir = ch.pedirNumero();
 
         } while (numElegir != 0);
     }
