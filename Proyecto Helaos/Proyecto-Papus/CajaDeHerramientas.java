@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class CajaDeHerramientas {
     Scanner sc = new Scanner(System.in);
+    
 
         public int pedirNumero()
     {
@@ -14,6 +15,13 @@ public class CajaDeHerramientas {
           String palabraClave = "";
           palabraClave = sc.nextLine();
           return palabraClave;
+    }
+
+    public char confirmarPedido ()
+    {
+        String temporal = sc.next();
+        
+        return temporal.charAt(0);
     }
     public void evitarSaltoDeEnteros(){
             sc.nextLine();

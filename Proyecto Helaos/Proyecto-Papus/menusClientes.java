@@ -33,18 +33,21 @@ public class menusClientes {
             System.out.println("4. Bebidas");
 
             System.out.println("---------------");
-            System.out.println("5. Salir del menú");
+            System.out.println("5. ver cuenta de compra");
+
+            System.out.println("---------------");
+            System.out.println("6. Salir del menú");
 
             numPedido = ch.pedirNumero();
 
 
-            if (numPedido > 5 || numPedido < 0) {
+            if (numPedido > 6 || numPedido < 0) {
                 System.out.println("Opción invalida");
             }
 
             elegirMenuClientes(numPedido, productos);
 
-        } while (numPedido != 5 && numPedido < 5 && numPedido > 0);
+        } while (numPedido != 6 && numPedido < 6 && numPedido > 0);
 
     }
 
@@ -65,6 +68,12 @@ public class menusClientes {
             case 4:
                 productos.getBebidas();
                 break;
+
+            case 5:
+            System.out.println("Tu cuenta es = "+ productos.getCuenta());
+           
+
+            break;
 
             default:
                 break;
