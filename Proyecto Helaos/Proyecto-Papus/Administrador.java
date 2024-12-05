@@ -53,6 +53,8 @@ public class Administrador {
                         System.out.println("Mostrando inventario");
                         System.out.println("Seleccione lo que desea cambiar");
 
+                        productos.cambiarNombreProductos();
+
                     } else {
                         System.out.println("Ingrese la palabra segura (semilla)");
                     }
@@ -69,7 +71,4 @@ public class Administrador {
     }
 
 }
-
-
-
 

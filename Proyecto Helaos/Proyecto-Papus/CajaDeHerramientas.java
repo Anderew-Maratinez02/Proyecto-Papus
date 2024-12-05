@@ -12,8 +12,7 @@ public class CajaDeHerramientas {
     }
 
     public String pedirString(){
-          String palabraClave = "";
-          palabraClave = sc.nextLine();
+          String palabraClave = sc.nextLine();
           return palabraClave;
     }
 
@@ -27,4 +26,3 @@ public class CajaDeHerramientas {
             sc.nextLine();
     }
 }
-
