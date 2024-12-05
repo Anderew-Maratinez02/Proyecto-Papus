@@ -11,7 +11,8 @@ public class Productos {
     private double precioGofres[];
     private double precioBebidas[];
 
-    private double cuenta; 
+    private double [] cuenta;
+    private int tamCuenta; 
 
 
 
@@ -26,7 +27,7 @@ public class Productos {
         this.precioGranizado = new double[] {3,3.5,4};
         this.precioGofres = new double[] {6.5,6.5,8};
         this.precioBebidas = new double[] {3,4,6.99};
-        this.cuenta = 0;
+        this.cuenta = new double[tamCuenta];
     }
 
     protected void getTodosLosProductos() {
@@ -47,10 +48,13 @@ public class Productos {
         }
 
     }
-        public double getCuenta() 
-        
-    {
-        return cuenta;
+        public double getCuenta()   
+    {double aux = 0;
+        for(int i =0;i < cuenta.length;i++)
+        {
+           aux += cuenta[i];
+        }
+        return aux;
     }
     protected void cambiarNombreProductos() { // Esta funcion aun no esta en uso y podrias meterla en administrador
         int numElegir = 0;
@@ -64,6 +68,7 @@ public class Productos {
         System.out.println("3º Gofres");
         System.out.println("4º Bebidas");
         System.out.println("5º Salir");
+        
 
         numElegir = ch.pedirNumero();
 
@@ -79,6 +84,18 @@ public class Productos {
                 nombreNuevo = ch.pedirString();
                helados[0] =  nombreNuevo;
             }
+            
+            else if (numElegirProducto == 2) 
+            {
+                nombreNuevo = ch.pedirString();
+               helados[1] =  nombreNuevo;
+            }
+            
+            else if (numElegirProducto == 3) 
+            {
+                nombreNuevo = ch.pedirString();
+               helados[2] =  nombreNuevo;
+            }
 
             break;
             case 2:for (int i = 0; i < granizado.length; i++) {
@@ -86,19 +103,24 @@ public class Productos {
             }
             System.out.println("Estas cambiando... granizados, elige cual cambiar");
             numElegirProducto = ch.pedirNumero();
-            switch (numElegirProducto) {
+            ch.evitarSaltoDeEnteros();
 
-                case 1:granizado[0] = ch.pedirString();
-                break;
-
-                case 2:granizado[1] = ch.pedirString();
-                break;
-
-                case 3:granizado[2] = ch.pedirString();
-                break;
+            if (numElegirProducto == 1) 
+            {
+                nombreNuevo = ch.pedirString();
+               granizado[0] =  nombreNuevo;
+            }
             
-                default:System.out.println("Opción invalida");
-                break;
+            else if (numElegirProducto == 2) 
+            {
+                nombreNuevo = ch.pedirString();
+               granizado[1] =  nombreNuevo;
+            }
+            
+            else if (numElegirProducto == 3) 
+            {
+                nombreNuevo = ch.pedirString();
+               granizado[2] =  nombreNuevo;
             }
             break;
             case 3:for (int i = 0; i < gofres.length; i++) {
@@ -106,19 +128,24 @@ public class Productos {
             }
             System.out.println("Estas cambiando... gofres, elige cual cambiar");
             numElegirProducto = ch.pedirNumero();
-            switch (numElegirProducto) {
+            ch.evitarSaltoDeEnteros();
 
-                case 1:gofres[0] = ch.pedirString();
-                break;
-
-                case 2:gofres[1] = ch.pedirString();
-                break;
-
-                case 3:gofres[2] = ch.pedirString();
-                break;
+            if (numElegirProducto == 1) 
+            {
+                nombreNuevo = ch.pedirString();
+               gofres[0] =  nombreNuevo;
+            }
             
-                default:System.out.println("Opción invalida");
-                break;
+            else if (numElegirProducto == 2) 
+            {
+                nombreNuevo = ch.pedirString();
+               gofres[1] =  nombreNuevo;
+            }
+            
+            else if (numElegirProducto == 3) 
+            {
+                nombreNuevo = ch.pedirString();
+               gofres[2] =  nombreNuevo;
             }
             break;
             case 4:for (int i = 0; i < bebidas.length; i++) {
@@ -126,32 +153,31 @@ public class Productos {
             }
             System.out.println("Estas cambiando... bebidas, elige cual cambiar");
             numElegirProducto = ch.pedirNumero();
-            switch (numElegirProducto) {
+            ch.evitarSaltoDeEnteros();
 
-                case 1:bebidas[0] = ch.pedirString();
-                break;
-
-                case 2:bebidas[1] = ch.pedirString();
-                break;
-
-                case 3:bebidas[2] = ch.pedirString();
-                break;
+            if (numElegirProducto == 1) 
+            {
+                nombreNuevo = ch.pedirString();
+               bebidas[0] =  nombreNuevo;
+            }
             
-                default:System.out.println("Opción invalida");
-                break;
+            else if (numElegirProducto == 2) 
+            {
+                nombreNuevo = ch.pedirString();
+               bebidas[1] =  nombreNuevo;
+            }
+            
+            else if (numElegirProducto == 3) 
+            {
+                nombreNuevo = ch.pedirString();
+               bebidas[2] =  nombreNuevo;
             }
             break;
         
             default:System.out.println("Opcion de clase de producto incorrecta o desconocida");
                 break;
         }
-
-            
         } while (numElegir != 5);
-        
-            
-        
-
     }
 
     protected void getHelados() {
@@ -177,7 +203,17 @@ public class Productos {
                     if (charConfirmar == 's') 
                     {
                         System.out.println("||Elegiste... "+ helados[0] +" ||");
-                        cuenta += precioHelados[0];
+                        
+                        for(int c = 0;c < cuenta.length;c++ )
+                        {
+                        
+                        if (cuenta[c] == 0) 
+                        {
+                            cuenta[c] += precioHelados[0];  
+                        }
+                        
+                        }
+                       tamCuenta++;
                     }
         
                 break;
@@ -191,7 +227,17 @@ public class Productos {
                     if (charConfirmar == 's') 
                     {
                         System.out.println("||Elegiste... "+ helados[1] +" ||");
-                        cuenta += precioHelados[1];
+                       
+                        for(int c = 0;c < cuenta.length;c++ )
+                        {
+                        
+                        if (cuenta[c] == 0) 
+                        {
+                            cuenta[c] += precioHelados[1];  
+                        }
+                        
+                        }
+                       tamCuenta++;
                     }
                 break;
 
@@ -204,7 +250,16 @@ public class Productos {
                         if (charConfirmar == 's') 
                         {
                             System.out.println("||Elegiste... "+ helados[2] +" ||");
-                            cuenta += precioHelados[2];
+                            for(int c = 0;c < cuenta.length;c++ )
+                            {
+                            
+                            if (cuenta[c] == 0) 
+                            {
+                                cuenta[c] += precioHelados[2];  
+                            }
+                            
+                            }
+                           tamCuenta++;
                         }
                 break;
             
@@ -242,7 +297,16 @@ public class Productos {
                     if (charConfirmar == 's') 
                     {
                         System.out.println("||Elegiste... "+ granizado[0] +" ||");
-                        cuenta += precioGranizado[0];
+                        for(int c = 0;c < cuenta.length;c++ )
+                        {
+                        
+                        if (cuenta[c] == 0) 
+                        {
+                            cuenta[c] += precioGranizado[0];  
+                        }
+                        
+                        }
+                       tamCuenta++;
                     }
         
                 break;
@@ -256,7 +320,16 @@ public class Productos {
                     if (charConfirmar == 's') 
                     {
                         System.out.println("||Elegiste... "+ granizado[1] +" ||");
-                        cuenta += precioGranizado[1];
+                        for(int c = 0;c < cuenta.length;c++ )
+                        {
+                        
+                        if (cuenta[c] == 0) 
+                        {
+                            cuenta[c] += precioGranizado[1];  
+                        }
+                        
+                        }
+                       tamCuenta++;
                     }
                 break;
 
@@ -269,7 +342,16 @@ public class Productos {
                         if (charConfirmar == 's') 
                         {
                             System.out.println("||Elegiste... "+ granizado[2] +" ||");
-                            cuenta += precioGranizado[2];
+                            for(int c = 0;c < cuenta.length;c++ )
+                        {
+                        
+                        if (cuenta[c] == 0) 
+                        {
+                            cuenta[c] += precioGranizado[2];  
+                        }
+                        
+                        }
+                       tamCuenta++;
                         }
                 break;
             
@@ -310,7 +392,16 @@ public class Productos {
                     if (charConfirmar == 's') 
                     {
                         System.out.println("||Elegiste... "+ gofres[0] +" ||");
-                        cuenta += precioGofres[0];
+                        for(int c = 0;c < cuenta.length;c++ )
+                        {
+                        
+                        if (cuenta[c] == 0) 
+                        {
+                            cuenta[c] += precioGofres[0];  
+                        }
+                        
+                        }
+                       tamCuenta++;
                     }
         
                 break;
@@ -324,7 +415,16 @@ public class Productos {
                     if (charConfirmar == 's') 
                     {
                         System.out.println("||Elegiste... "+ gofres[1] +" ||");
-                        cuenta += precioGofres[1];
+                        for(int c = 0;c < cuenta.length;c++ )
+                        {
+                        
+                        if (cuenta[c] == 0) 
+                        {
+                            cuenta[c] += precioGofres[1];  
+                        }
+                        
+                        }
+                       tamCuenta++;
                     }
                 break;
 
@@ -337,7 +437,16 @@ public class Productos {
                         if (charConfirmar == 's') 
                         {
                             System.out.println("||Elegiste... "+ gofres[2] +" ||");
-                            cuenta += precioGofres[2];
+                            for(int c = 0;c < cuenta.length;c++ )
+                            {
+                            
+                            if (cuenta[c] == 0) 
+                            {
+                                cuenta[c] += precioGofres[2];  
+                            }
+                            
+                            }
+                           tamCuenta++;
                         }
                 break;
             
@@ -377,7 +486,16 @@ public class Productos {
                     if (charConfirmar == 's') 
                     {
                         System.out.println("||Elegiste... "+ bebidas[0] +" ||");
-                        cuenta += precioBebidas[0];
+                        for(int c = 0;c < cuenta.length;c++ )
+                        {
+                        
+                        if (cuenta[c] == 0) 
+                        {
+                            cuenta[c] += precioBebidas[0];  
+                        }
+                        
+                        }
+                       tamCuenta++;
                     }
         
                 break;
@@ -391,7 +509,16 @@ public class Productos {
                     if (charConfirmar == 's') 
                     {
                         System.out.println("||Elegiste... "+ bebidas[1] +" ||");
-                        cuenta += precioBebidas[1];
+                        for(int c = 0;c < cuenta.length;c++ )
+                        {
+                        
+                        if (cuenta[c] == 0) 
+                        {
+                            cuenta[c] += precioBebidas[1];  
+                        }
+                        
+                        }
+                       tamCuenta++;
                     }
                 break;
 
@@ -404,7 +531,16 @@ public class Productos {
                         if (charConfirmar == 's') 
                         {
                             System.out.println("||Elegiste... "+ bebidas[2] +" ||");
-                            cuenta += precioBebidas[2];
+                            for(int c = 0;c < cuenta.length;c++ )
+                        {
+                        
+                        if (cuenta[c] == 0) 
+                        {
+                            cuenta[c] += precioBebidas[2];  
+                        }
+                        
+                        }
+                       tamCuenta++;
                         }
                 break;
             
