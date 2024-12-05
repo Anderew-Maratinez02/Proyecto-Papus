@@ -1,18 +1,23 @@
 public class menusClientes {
     CajaDeHerramientas ch = new CajaDeHerramientas();
     Productos productos = new Productos();
+    protected int cantidadClientes = cantidadClientes();
     //Cambiar esto
-    protected int cantidadClientesLocal=2;
-    private String []eleccionCliente;
+    private String[] eleccionCliente;
 
+
+    public int cantidadClientes(){
+        System.out.println("Ingrese la cantidad de clientes");
+        cantidadClientes = ch.pedirNumero();
+        return cantidadClientes;
+    }
     // cambiar la manera de como preguntar la cantidad n de clientes
     public void mostrarMenu() {
-//        cantidadClientes();
         ch.evitarSaltoDeEnteros();
-        eleccionCliente = new String[cantidadClientesLocal];
+        eleccionCliente = new String[cantidadClientes];
         int numPedido = 0;
-        for (int i = 0; i <eleccionCliente.length ; i++) {
-            System.out.println("Cliente #" + (i+1));
+        for (int i = 0; i < eleccionCliente.length; i++) {
+            System.out.println("Cliente #" + (i + 1));
         }
 
         do {
@@ -69,22 +74,17 @@ public class menusClientes {
                 break;
 
             case 5:
-            System.out.println("Tu cuenta es = "+ productos.getCuenta());
-           
+                System.out.println("Tu cuenta es = " + productos.getCuenta());
 
-            break;
+
+                break;
 
             default:
                 break;
         }
     }
 
-    public void cantidadClientes(){
-        System.out.println("Ingrese cantidad de clientes");
-        cantidadClientesLocal = ch.pedirNumero();
-    }
-
-    public int getCantidadClientesLocal() {
-        return cantidadClientesLocal;
+    public int getCantidadClientes() {
+        return cantidadClientes;
     }
 }
