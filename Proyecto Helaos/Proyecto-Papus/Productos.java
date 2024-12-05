@@ -73,6 +73,7 @@ public class Productos {
             }
             System.out.println("Estas cambiando... Helados, elige cual cambiar");
             numElegirProducto = ch.pedirNumero();
+            ch.evitarSaltoDeEnteros();
             if (numElegirProducto == 1) 
             {
                 nombreNuevo = ch.pedirString();
