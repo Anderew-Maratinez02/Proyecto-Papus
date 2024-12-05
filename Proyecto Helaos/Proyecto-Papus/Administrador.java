@@ -41,6 +41,7 @@ public class Administrador {
                     break;
                 case 3:
                     System.out.println("Estás viendo la cantidad de pedidos");
+                    System.out.println(mc.getCantidadClientesLocal());
                     break;
                 case 4:
                     System.out.println("Estas modificando el inventario");

@@ -2,14 +2,13 @@ public class menusClientes {
     CajaDeHerramientas ch = new CajaDeHerramientas();
     Productos productos = new Productos();
     //Cambiar esto
-    private int cantidadClientesLocal;
+    protected int cantidadClientesLocal=2;
     private String []eleccionCliente;
 
-
-
+    // cambiar la manera de como preguntar la cantidad n de clientes
     public void mostrarMenu() {
-
-        cantidadClientes();
+//        cantidadClientes();
+        ch.evitarSaltoDeEnteros();
         eleccionCliente = new String[cantidadClientesLocal];
         int numPedido = 0;
         for (int i = 0; i <eleccionCliente.length ; i++) {
@@ -83,5 +82,9 @@ public class menusClientes {
     public void cantidadClientes(){
         System.out.println("Ingrese cantidad de clientes");
         cantidadClientesLocal = ch.pedirNumero();
+    }
+
+    public int getCantidadClientesLocal() {
+        return cantidadClientesLocal;
     }
 }
