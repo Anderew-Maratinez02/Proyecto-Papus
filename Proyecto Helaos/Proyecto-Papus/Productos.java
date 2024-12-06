@@ -12,6 +12,7 @@ public class Productos {
     private double precioBebidas[];
 
     private double [] cuenta;
+    private String [] NomDeProductosComprados;
     private int tamCuenta; 
 
 
@@ -27,7 +28,10 @@ public class Productos {
         this.precioGranizado = new double[] {3,3.5,4};
         this.precioGofres = new double[] {6.5,6.5,8};
         this.precioBebidas = new double[] {3,4,6.99};
-        this.cuenta = new double[tamCuenta];
+        this.tamCuenta = 0;
+        this.cuenta = new double[25];
+        this.NomDeProductosComprados = new String[25];
+        
     }
 
     protected void getTodosLosProductos() {
@@ -48,13 +52,13 @@ public class Productos {
         }
 
     }
-        public double getCuenta()   
+        public void getCuenta()   
     {double aux = 0;
         for(int i =0;i < cuenta.length;i++)
-        {
+        {System.out.println(NomDeProductosComprados[i]+ " "+cuenta[i]);
            aux += cuenta[i];
-        }
-        return aux;
+        }System.out.println("Tu cuenta es de = "+ aux );
+        
     }
     protected void cambiarNombreProductos() { // Esta funcion aun no esta en uso y podrias meterla en administrador
         int numElegir = 0;
@@ -183,11 +187,12 @@ public class Productos {
     protected void getHelados() {
         int numElegir = 0;
         do {
+            System.out.println(" ");
             System.out.println("Elige una opción, salir (0)");
             System.out.println(" ");
 
             for (int i = 0; i < helados.length; i++) {
-                System.out.println("º" + (i + 1) + " " + helados[i]);
+                System.out.println("º" + (i + 1) + " " + helados[i] + " "+ precioHelados[i]+ " $");
                 System.out.println("-------------------");
 
             }
@@ -203,17 +208,11 @@ public class Productos {
                     if (charConfirmar == 's') 
                     {
                         System.out.println("||Elegiste... "+ helados[0] +" ||");
-                        
-                        for(int c = 0;c < cuenta.length;c++ )
-                        {
-                        
-                        if (cuenta[c] == 0) 
-                        {
-                            cuenta[c] += precioHelados[0];  
-                        }
-                        
-                        }
-                       tamCuenta++;
+                        NomDeProductosComprados[tamCuenta] += helados[0];
+                        cuenta[tamCuenta] += precioHelados[0];
+                        tamCuenta++;
+
+                       System.out.println("Cantidad de productos elegidos "+ tamCuenta);
                     }
         
                 break;
@@ -227,17 +226,11 @@ public class Productos {
                     if (charConfirmar == 's') 
                     {
                         System.out.println("||Elegiste... "+ helados[1] +" ||");
-                       
-                        for(int c = 0;c < cuenta.length;c++ )
-                        {
+                        NomDeProductosComprados[tamCuenta] += helados[1];
+                         cuenta[tamCuenta] += precioHelados[1];
+                        tamCuenta++;
                         
-                        if (cuenta[c] == 0) 
-                        {
-                            cuenta[c] += precioHelados[1];  
-                        }
-                        
-                        }
-                       tamCuenta++;
+                       System.out.println("Cantidad de productos elegidos "+ tamCuenta);
                     }
                 break;
 
@@ -250,16 +243,11 @@ public class Productos {
                         if (charConfirmar == 's') 
                         {
                             System.out.println("||Elegiste... "+ helados[2] +" ||");
-                            for(int c = 0;c < cuenta.length;c++ )
-                            {
+                            NomDeProductosComprados[tamCuenta] += helados[2];
+                            cuenta[tamCuenta] += precioHelados[2];
+                            tamCuenta++;
                             
-                            if (cuenta[c] == 0) 
-                            {
-                                cuenta[c] += precioHelados[2];  
-                            }
-                            
-                            }
-                           tamCuenta++;
+                           System.out.println("Cantidad de productos elegidos "+ tamCuenta);
                         }
                 break;
             
@@ -276,12 +264,12 @@ public class Productos {
 
    protected void getGranizados() {
         int numElegir = 0;
-        do {
+        do { System.out.println(" ");
             System.out.println("Elige una opción, salir (0)");
             System.out.println(" ");
 
             for (int a = 0; a < granizado.length; a++) {
-                System.out.println("º" + (a + 1) + " " + granizado[a]);
+                System.out.println("º" + (a + 1) + " " + granizado[a]+ " "+ precioGranizado[a]+ " $");
                 System.out.println("-------------------");
 
             }
@@ -297,16 +285,11 @@ public class Productos {
                     if (charConfirmar == 's') 
                     {
                         System.out.println("||Elegiste... "+ granizado[0] +" ||");
-                        for(int c = 0;c < cuenta.length;c++ )
-                        {
+                        NomDeProductosComprados[tamCuenta] += granizado[0];
+                        cuenta[tamCuenta] += precioGranizado[0];
+                        tamCuenta++;
                         
-                        if (cuenta[c] == 0) 
-                        {
-                            cuenta[c] += precioGranizado[0];  
-                        }
-                        
-                        }
-                       tamCuenta++;
+                       System.out.println("Cantidad de productos elegidos "+ tamCuenta);
                     }
         
                 break;
@@ -320,16 +303,12 @@ public class Productos {
                     if (charConfirmar == 's') 
                     {
                         System.out.println("||Elegiste... "+ granizado[1] +" ||");
-                        for(int c = 0;c < cuenta.length;c++ )
-                        {
                         
-                        if (cuenta[c] == 0) 
-                        {
-                            cuenta[c] += precioGranizado[1];  
-                        }
+                        NomDeProductosComprados[tamCuenta] += granizado[1];
+                        cuenta[tamCuenta] += precioGranizado[1];
+                        tamCuenta++;
                         
-                        }
-                       tamCuenta++;
+                       System.out.println("Cantidad de productos elegidos "+ tamCuenta);
                     }
                 break;
 
@@ -342,16 +321,11 @@ public class Productos {
                         if (charConfirmar == 's') 
                         {
                             System.out.println("||Elegiste... "+ granizado[2] +" ||");
-                            for(int c = 0;c < cuenta.length;c++ )
-                        {
-                        
-                        if (cuenta[c] == 0) 
-                        {
-                            cuenta[c] += precioGranizado[2];  
-                        }
-                        
-                        }
-                       tamCuenta++;
+                            NomDeProductosComprados[tamCuenta] += granizado[2];
+                            cuenta[tamCuenta] += precioGranizado[2];
+                            tamCuenta++;
+                            
+                           System.out.println("Cantidad de productos elegidos "+ tamCuenta);
                         }
                 break;
             
@@ -368,14 +342,14 @@ public class Productos {
 
     protected void getGofres() {
         int numElegir = 0;
-        do {
+        do { System.out.println(" ");
             System.out.println("Elige una opción, salir (0)");
             System.out.println(" ");
 
 
             {
                 for (int b = 0; b < gofres.length; b++)
-                    System.out.println("º" + (b + 1) + " " + gofres[b]);
+                    System.out.println("º" + (b + 1) + " " + gofres[b]+ " "+ precioGofres[b]+ " $");
                 System.out.println("-------------------");
 
 
@@ -392,16 +366,11 @@ public class Productos {
                     if (charConfirmar == 's') 
                     {
                         System.out.println("||Elegiste... "+ gofres[0] +" ||");
-                        for(int c = 0;c < cuenta.length;c++ )
-                        {
+                        NomDeProductosComprados[tamCuenta] += gofres[0];
+                        cuenta[tamCuenta] += precioGofres[0];
+                        tamCuenta++;
                         
-                        if (cuenta[c] == 0) 
-                        {
-                            cuenta[c] += precioGofres[0];  
-                        }
-                        
-                        }
-                       tamCuenta++;
+                       System.out.println("Cantidad de productos elegidos "+ tamCuenta);
                     }
         
                 break;
@@ -415,16 +384,11 @@ public class Productos {
                     if (charConfirmar == 's') 
                     {
                         System.out.println("||Elegiste... "+ gofres[1] +" ||");
-                        for(int c = 0;c < cuenta.length;c++ )
-                        {
+                        NomDeProductosComprados[tamCuenta] += gofres[1];
+                        cuenta[tamCuenta] += precioGofres[1];
+                        tamCuenta++;
                         
-                        if (cuenta[c] == 0) 
-                        {
-                            cuenta[c] += precioGofres[1];  
-                        }
-                        
-                        }
-                       tamCuenta++;
+                       System.out.println("Cantidad de productos elegidos "+ tamCuenta);
                     }
                 break;
 
@@ -437,16 +401,11 @@ public class Productos {
                         if (charConfirmar == 's') 
                         {
                             System.out.println("||Elegiste... "+ gofres[2] +" ||");
-                            for(int c = 0;c < cuenta.length;c++ )
-                            {
-                            
-                            if (cuenta[c] == 0) 
-                            {
-                                cuenta[c] += precioGofres[2];  
-                            }
-                            
-                            }
-                           tamCuenta++;
+                            NomDeProductosComprados[tamCuenta] += gofres[2];
+                            cuenta[tamCuenta] += precioGofres[2];
+                        tamCuenta++;
+                        
+                       System.out.println("Cantidad de productos elegidos "+ tamCuenta);
                         }
                 break;
             
@@ -461,7 +420,7 @@ public class Productos {
 
    protected void getBebidas() {
         int numElegir = 0;
-        do {
+        do { System.out.println(" ");
             System.out.println("Elige una opción, salir (0)");
             System.out.println(" ");
 
@@ -486,16 +445,11 @@ public class Productos {
                     if (charConfirmar == 's') 
                     {
                         System.out.println("||Elegiste... "+ bebidas[0] +" ||");
-                        for(int c = 0;c < cuenta.length;c++ )
-                        {
+                        NomDeProductosComprados[tamCuenta] += bebidas[0];
+                        cuenta[tamCuenta] += precioBebidas[0];
+                        tamCuenta++;
                         
-                        if (cuenta[c] == 0) 
-                        {
-                            cuenta[c] += precioBebidas[0];  
-                        }
-                        
-                        }
-                       tamCuenta++;
+                       System.out.println("Cantidad de productos elegidos "+ tamCuenta);
                     }
         
                 break;
@@ -509,16 +463,11 @@ public class Productos {
                     if (charConfirmar == 's') 
                     {
                         System.out.println("||Elegiste... "+ bebidas[1] +" ||");
-                        for(int c = 0;c < cuenta.length;c++ )
-                        {
+                        NomDeProductosComprados[tamCuenta] += bebidas[1];
+                        cuenta[tamCuenta] += precioBebidas[1];
+                        tamCuenta++;
                         
-                        if (cuenta[c] == 0) 
-                        {
-                            cuenta[c] += precioBebidas[1];  
-                        }
-                        
-                        }
-                       tamCuenta++;
+                       System.out.println("Cantidad de productos elegidos "+ tamCuenta);
                     }
                 break;
 
@@ -531,16 +480,11 @@ public class Productos {
                         if (charConfirmar == 's') 
                         {
                             System.out.println("||Elegiste... "+ bebidas[2] +" ||");
-                            for(int c = 0;c < cuenta.length;c++ )
-                        {
-                        
-                        if (cuenta[c] == 0) 
-                        {
-                            cuenta[c] += precioBebidas[2];  
-                        }
-                        
-                        }
-                       tamCuenta++;
+                            NomDeProductosComprados[tamCuenta] += bebidas[2];
+                            cuenta[tamCuenta] += precioBebidas[2];
+                            tamCuenta++;
+                            
+                           System.out.println("Cantidad de productos elegidos "+ tamCuenta);
                         }
                 break;
             

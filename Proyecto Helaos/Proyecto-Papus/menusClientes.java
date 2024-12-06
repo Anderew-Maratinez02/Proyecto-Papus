@@ -74,7 +74,7 @@ public class menusClientes {
                 break;
 
             case 5:
-                System.out.println("Tu cuenta es = " + productos.getCuenta());
+                productos.getCuenta();
 
 
                 break;
