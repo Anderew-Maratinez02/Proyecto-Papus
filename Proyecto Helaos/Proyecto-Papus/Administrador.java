@@ -1,9 +1,8 @@
 public class Administrador {
     CajaDeHerramientas sc = new CajaDeHerramientas();
-    menusClientes mc = new menusClientes();
+    menusClientes menuCliente = new menusClientes();
 
     private int pass_Administrador;
-    private boolean confirmacionDeAcceso;
     private String semilla = "papus@";
     Productos productos = new Productos();
 
@@ -12,11 +11,9 @@ public class Administrador {
         pass_Administrador = sc.pedirNumero();
         if (pass_Administrador == 1233) {
             System.out.println("Acceso válido");
-            confirmacionDeAcceso = true;
             menuOpcionesAdministrador();
         } else {
             System.out.println("Accseso no válido");
-            confirmacionDeAcceso = false;
         }
     }
 
@@ -41,7 +38,7 @@ public class Administrador {
                     break;
                 case 3:
                     System.out.println("Estás viendo la cantidad de pedidos");
-                    System.out.println(mc.getCantidadClientes());
+                    System.out.println(menuCliente.getCantidadClientes());
                     break;
                 case 4:
                     System.out.println("Estas modificando el inventario");

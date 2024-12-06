@@ -1,25 +1,22 @@
 public class menusClientes {
     CajaDeHerramientas ch = new CajaDeHerramientas();
     Productos productos = new Productos();
-    protected int cantidadClientes = cantidadClientes();
-    //Cambiar esto
-    private String[] eleccionCliente;
+    //cambiar esto
+    protected int cantidadClientes = pedirCantidadClientes();
+    protected String arrayOpcionCliente[];
 
-
-    public int cantidadClientes(){
-        System.out.println("Ingrese la cantidad de clientes");
+    public  int pedirCantidadClientes(){
+        System.out.println("Ingresa la cantidad de clientes");
         cantidadClientes = ch.pedirNumero();
         return cantidadClientes;
     }
-    // cambiar la manera de como preguntar la cantidad n de clientes
-    public void mostrarMenu() {
-        ch.evitarSaltoDeEnteros();
-        eleccionCliente = new String[cantidadClientes];
-        int numPedido = 0;
-        for (int i = 0; i < eleccionCliente.length; i++) {
-            System.out.println("Cliente #" + (i + 1));
-        }
 
+    public void mostrarMenu() {
+        arrayOpcionCliente = new String[cantidadClientes];
+        for (int i = 0; i <arrayOpcionCliente.length ; i++) {
+            System.out.println("Cliente #" + (i+1));
+        }
+        int numPedido = 0;
         do {
             System.out.println(" ");
             System.out.println("elige un apartado del menú del 1 al 5");
