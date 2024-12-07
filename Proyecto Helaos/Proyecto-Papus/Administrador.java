@@ -1,14 +1,16 @@
 public class Administrador {
-    CajaDeHerramientas sc = new CajaDeHerramientas();
+    CajaDeHerramientas ch = new CajaDeHerramientas();
     menusClientes menuCliente = new menusClientes();
+    Productos productos = new Productos();
+    heladosMain main = new heladosMain();
+
 
     private int pass_Administrador;
     private String semilla = "papus@";
-    Productos productos = new Productos();
-
+    
 
     public void ingresoAdministrador() {
-        pass_Administrador = sc.pedirNumero();
+        pass_Administrador = ch.pedirNumero();
         if (pass_Administrador == 1233) {
             System.out.println("Acceso válido");
             menuOpcionesAdministrador();
@@ -27,11 +29,13 @@ public class Administrador {
                     + "3. total pedidos \n"
                     + "4. Modificar inventario \n"
                     + "5. Salir");
-            opcion = sc.pedirNumero();
-            sc.evitarSaltoDeEnteros();
+            opcion = ch.pedirNumero();
+            ch.evitarSaltoDeEnteros();
             switch (opcion) {
                 case 1:
+                    
                     System.out.println("Estás viendo el historial de compra");
+                      main.mostrarHistorialDeVentas(null, null, productos);
                     break;
                 case 2:
                     System.out.println("Estás viendo el promedio");
@@ -44,7 +48,7 @@ public class Administrador {
                     System.out.println("Estas modificando el inventario");
                     System.out.println("Ingresa la palabra clave para continuar");
 
-                    palabraSegura = sc.pedirString();
+                    palabraSegura = ch.pedirString();
 
                     if (semilla.equals(palabraSegura)) {
                         System.out.println("Mostrando inventario");
@@ -66,6 +70,10 @@ public class Administrador {
 
 
     }
+
+   
+
+    
 
 }
 

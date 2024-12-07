@@ -1,9 +1,22 @@
+
+
 public class menusClientes {
     CajaDeHerramientas ch = new CajaDeHerramientas();
     Productos productos = new Productos();
+    
+    
+    
     //cambiar esto
     protected int cantidadClientes = pedirCantidadClientes();
     protected String arrayOpcionCliente[];
+    
+   
+    
+
+    
+    
+
+
 
     public  int pedirCantidadClientes(){
         System.out.println("Ingresa la cantidad de clientes");
@@ -12,6 +25,9 @@ public class menusClientes {
     }
 
     public void mostrarMenu() {
+        
+        productos.darIdCliente();
+
         arrayOpcionCliente = new String[cantidadClientes];
         for (int i = 0; i <arrayOpcionCliente.length ; i++) {
             System.out.println("Cliente #" + (i+1));
@@ -37,7 +53,7 @@ public class menusClientes {
             System.out.println("5. ver cuenta de compra");
 
             System.out.println("---------------");
-            System.out.println("6. Salir del menú");
+            System.out.println("6. Salir del menú y finalizar compra");
 
             numPedido = ch.pedirNumero();
 
@@ -49,6 +65,8 @@ public class menusClientes {
             elegirMenuClientes(numPedido, productos);
 
         } while (numPedido != 6 && numPedido < 6 && numPedido > 0);
+
+    
 
     }
 
@@ -71,9 +89,7 @@ public class menusClientes {
                 break;
 
             case 5:
-                productos.getCuenta();
-
-
+                productos.getCuentaCliente();
                 break;
 
             default:

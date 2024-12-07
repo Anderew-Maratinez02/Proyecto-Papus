@@ -13,7 +13,12 @@ public class Productos {
 
     private double [] cuenta;
     private String [] NomDeProductosComprados;
-    private int tamCuenta; 
+
+    
+    private int tamCuenta;
+
+    private double totalCuenta; 
+    private int idCliente;
 
 
 
@@ -29,9 +34,53 @@ public class Productos {
         this.precioGofres = new double[] {6.5,6.5,8};
         this.precioBebidas = new double[] {3,4,6.99};
         this.tamCuenta = 0;
+        this.totalCuenta = 0;
+        this.idCliente= 0;
         this.cuenta = new double[25];
         this.NomDeProductosComprados = new String[25];
         
+    }
+    
+
+    public void darIdCliente () 
+    {   int numeroAleatorio = 0;
+        if (idCliente == 0 || idCliente == numeroAleatorio) {
+            
+        numeroAleatorio = (int) (Math.random() * 100) + 1;
+        idCliente = numeroAleatorio;
+         }
+    }
+    
+    public String[] getNomDeProductosComprados() {
+        return NomDeProductosComprados;
+    }
+
+    
+
+
+    public double getTotalCuenta() {
+        return totalCuenta;
+    }
+
+    public int getIdCliente() {
+        return idCliente;
+    }
+
+    protected Productos (final Productos historialCompra)
+    {
+        
+        this.totalCuenta = historialCompra.totalCuenta;
+        this.idCliente = historialCompra.idCliente;
+    }
+
+    protected void resetearCuenta ()
+    {
+        for (int i = 0; i < cuenta.length;i++)
+        {
+            cuenta[i] = 0;
+            NomDeProductosComprados[i] = " ";
+        }
+        idCliente = 0;
     }
 
     protected void getTodosLosProductos() {
@@ -52,12 +101,12 @@ public class Productos {
         }
 
     }
-        public void getCuenta()   
-    {double aux = 0;
+        public void getCuentaCliente()   
+    {
         for(int i =0;i < cuenta.length;i++)
         {System.out.println(NomDeProductosComprados[i]+ " "+cuenta[i]);
-           aux += cuenta[i];
-        }System.out.println("Tu cuenta es de = "+ aux );
+           totalCuenta += cuenta[i];
+        }System.out.println("Tu cuenta es de = "+ totalCuenta );
         
     }
     protected void cambiarNombreProductos() { // Esta funcion aun no esta en uso y podrias meterla en administrador
@@ -82,100 +131,59 @@ public class Productos {
             }
             System.out.println("Estas cambiando... Helados, elige cual cambiar");
             numElegirProducto = ch.pedirNumero();
-            ch.evitarSaltoDeEnteros();
-            if (numElegirProducto == 1) 
-            {
-                nombreNuevo = ch.pedirString();
-               helados[0] =  nombreNuevo;
-            }
-            
-            else if (numElegirProducto == 2) 
-            {
-                nombreNuevo = ch.pedirString();
-               helados[1] =  nombreNuevo;
-            }
-            
-            else if (numElegirProducto == 3) 
-            {
-                nombreNuevo = ch.pedirString();
-               helados[2] =  nombreNuevo;
-            }
 
-            break;
+            if (numElegir > 0 && numElegir < 4) {
+                
+            
+            ch.evitarSaltoDeEnteros();
+           
+                nombreNuevo = ch.pedirString();
+               helados[numElegirProducto-1] =  nombreNuevo;
+            } else  System.out.println("Opción desconocida");
+               break;
+
             case 2:for (int i = 0; i < granizado.length; i++) {
                 System.out.println("º" + (i+1) + " " + granizado[i]);
             }
             System.out.println("Estas cambiando... granizados, elige cual cambiar");
             numElegirProducto = ch.pedirNumero();
+
+            if (numElegir > 0 && numElegir < 4) {
             ch.evitarSaltoDeEnteros();
 
-            if (numElegirProducto == 1) 
-            {
                 nombreNuevo = ch.pedirString();
-               granizado[0] =  nombreNuevo;
-            }
-            
-            else if (numElegirProducto == 2) 
-            {
-                nombreNuevo = ch.pedirString();
-               granizado[1] =  nombreNuevo;
-            }
-            
-            else if (numElegirProducto == 3) 
-            {
-                nombreNuevo = ch.pedirString();
-               granizado[2] =  nombreNuevo;
-            }
+               granizado[numElegirProducto -1] =  nombreNuevo;
+            } else System.out.println("Opción desconocida");
             break;
+
             case 3:for (int i = 0; i < gofres.length; i++) {
                 System.out.println("º" + (i+1) + " " + gofres[i]);
             }
             System.out.println("Estas cambiando... gofres, elige cual cambiar");
             numElegirProducto = ch.pedirNumero();
+
+            if (numElegir > 0 && numElegir < 4) {
             ch.evitarSaltoDeEnteros();
 
-            if (numElegirProducto == 1) 
-            {
+           
                 nombreNuevo = ch.pedirString();
-               gofres[0] =  nombreNuevo;
-            }
-            
-            else if (numElegirProducto == 2) 
-            {
-                nombreNuevo = ch.pedirString();
-               gofres[1] =  nombreNuevo;
-            }
-            
-            else if (numElegirProducto == 3) 
-            {
-                nombreNuevo = ch.pedirString();
-               gofres[2] =  nombreNuevo;
-            }
+               gofres[numElegirProducto-1] =  nombreNuevo;
+            } else  System.out.println("Opción desconocida");
             break;
+
             case 4:for (int i = 0; i < bebidas.length; i++) {
                 System.out.println("º" + (i+1) + " " + bebidas[i]);
             }
             System.out.println("Estas cambiando... bebidas, elige cual cambiar");
             numElegirProducto = ch.pedirNumero();
+
+            if (numElegir > 0 && numElegir < 4) {
             ch.evitarSaltoDeEnteros();
 
-            if (numElegirProducto == 1) 
-            {
+           
                 nombreNuevo = ch.pedirString();
-               bebidas[0] =  nombreNuevo;
-            }
-            
-            else if (numElegirProducto == 2) 
-            {
-                nombreNuevo = ch.pedirString();
-               bebidas[1] =  nombreNuevo;
-            }
-            
-            else if (numElegirProducto == 3) 
-            {
-                nombreNuevo = ch.pedirString();
-               bebidas[2] =  nombreNuevo;
-            }
+               bebidas[numElegirProducto-1] =  nombreNuevo;
+            } else  System.out.println("Opción desconocida");
             break;
         
             default:System.out.println("Opcion de clase de producto incorrecta o desconocida");
@@ -183,6 +191,8 @@ public class Productos {
         }
         } while (numElegir != 5);
     }
+
+
 
     protected void getHelados() {
         int numElegir = 0;
@@ -197,67 +207,29 @@ public class Productos {
 
             }
             numElegir = ch.pedirNumero();
+            if (numElegir == 0) 
+            { 
+                break;  
+            }
+            else if (numElegir > 0 && numElegir < 4)
+            {
 
-            switch (numElegir) {
-
-                case 1: System.out.println("||¿Deseas este producto? "+helados[0]+ " ||");
+                 System.out.println("||¿Deseas este producto? "+helados[numElegir-1]+ " ||");
 
                 System.out.println("si - no");
                     char charConfirmar = ch.confirmarPedido();
 
                     if (charConfirmar == 's') 
                     {
-                        System.out.println("||Elegiste... "+ helados[0] +" ||");
-                        NomDeProductosComprados[tamCuenta] += helados[0];
-                        cuenta[tamCuenta] += precioHelados[0];
+                        System.out.println("||Elegiste... "+ helados[numElegir-1] +" ||");
+                        NomDeProductosComprados[tamCuenta] += helados[numElegir-1];
+                        cuenta[tamCuenta] += precioHelados[numElegir-1];
                         tamCuenta++;
 
                        System.out.println("Cantidad de productos elegidos "+ tamCuenta);
                     }
-        
-                break;
 
-                case 2: 
-                        System.out.println("||¿Deseas este producto? "+ helados[1]+ " ||");
-
-                        System.out.println("si - no");
-                         charConfirmar = ch.confirmarPedido();
-
-                    if (charConfirmar == 's') 
-                    {
-                        System.out.println("||Elegiste... "+ helados[1] +" ||");
-                        NomDeProductosComprados[tamCuenta] += helados[1];
-                         cuenta[tamCuenta] += precioHelados[1];
-                        tamCuenta++;
-                        
-                       System.out.println("Cantidad de productos elegidos "+ tamCuenta);
-                    }
-                break;
-
-                
-                case 3: System.out.println("||¿Deseas este producto? "+ helados[2]+ " ||");
-
-                        System.out.println("si - no");
-                        charConfirmar = ch.confirmarPedido();
-
-                        if (charConfirmar == 's') 
-                        {
-                            System.out.println("||Elegiste... "+ helados[2] +" ||");
-                            NomDeProductosComprados[tamCuenta] += helados[2];
-                            cuenta[tamCuenta] += precioHelados[2];
-                            tamCuenta++;
-                            
-                           System.out.println("Cantidad de productos elegidos "+ tamCuenta);
-                        }
-                break;
-            
-                default:System.out.println("||Elegiste... "+ " una opción incorrecta||");
-               
-                break;
-            }
-
-
-
+            }else System.out.println("Opción incorrecta");
         } while (numElegir != 0);
 
     }
@@ -275,66 +247,29 @@ public class Productos {
             }
             numElegir = ch.pedirNumero();
 
-            switch (numElegir) {
+            if (numElegir == 0) 
+            { 
+                break;  
+            }
+            else if (numElegir > 0 && numElegir < 4)
+            {
 
-                case 1: System.out.println("||¿Deseas este producto? "+granizado[0]+ " ||");
+                 System.out.println("||¿Deseas este producto? "+granizado[numElegir-1]+ " ||");
 
                 System.out.println("si - no");
                     char charConfirmar = ch.confirmarPedido();
 
                     if (charConfirmar == 's') 
                     {
-                        System.out.println("||Elegiste... "+ granizado[0] +" ||");
-                        NomDeProductosComprados[tamCuenta] += granizado[0];
-                        cuenta[tamCuenta] += precioGranizado[0];
+                        System.out.println("||Elegiste... "+ granizado[numElegir-1] +" ||");
+                        NomDeProductosComprados[tamCuenta] += granizado[numElegir-1];
+                        cuenta[tamCuenta] += precioGranizado[numElegir-1];
                         tamCuenta++;
-                        
+
                        System.out.println("Cantidad de productos elegidos "+ tamCuenta);
                     }
-        
-                break;
 
-                case 2: 
-                        System.out.println("||¿Deseas este producto? "+ granizado[1]+ " ||");
-
-                        System.out.println("si - no");
-                         charConfirmar = ch.confirmarPedido();
-
-                    if (charConfirmar == 's') 
-                    {
-                        System.out.println("||Elegiste... "+ granizado[1] +" ||");
-                        
-                        NomDeProductosComprados[tamCuenta] += granizado[1];
-                        cuenta[tamCuenta] += precioGranizado[1];
-                        tamCuenta++;
-                        
-                       System.out.println("Cantidad de productos elegidos "+ tamCuenta);
-                    }
-                break;
-
-                
-                case 3: System.out.println("||¿Deseas este producto? "+ granizado[2]+ " ||");
-
-                        System.out.println("si - no");
-                        charConfirmar = ch.confirmarPedido();
-
-                        if (charConfirmar == 's') 
-                        {
-                            System.out.println("||Elegiste... "+ granizado[2] +" ||");
-                            NomDeProductosComprados[tamCuenta] += granizado[2];
-                            cuenta[tamCuenta] += precioGranizado[2];
-                            tamCuenta++;
-                            
-                           System.out.println("Cantidad de productos elegidos "+ tamCuenta);
-                        }
-                break;
-            
-                default:System.out.println("||Elegiste... "+ " una opción incorrecta||");
-               
-                break;
-            }
-
-
+            }else System.out.println("Opción incorrecta");
 
         } while (numElegir != 0);
     }
@@ -355,65 +290,29 @@ public class Productos {
 
             }
             numElegir = ch.pedirNumero();
+            if (numElegir == 0) 
+            { 
+                break;  
+            }
+            else if (numElegir > 0 && numElegir < 4)
+            {
 
-            switch (numElegir) {
-
-                case 1: System.out.println("||¿Deseas este producto? "+gofres[0]+ " ||");
+                 System.out.println("||¿Deseas este producto? "+gofres[numElegir-1]+ " ||");
 
                 System.out.println("si - no");
                     char charConfirmar = ch.confirmarPedido();
 
                     if (charConfirmar == 's') 
                     {
-                        System.out.println("||Elegiste... "+ gofres[0] +" ||");
-                        NomDeProductosComprados[tamCuenta] += gofres[0];
-                        cuenta[tamCuenta] += precioGofres[0];
+                        System.out.println("||Elegiste... "+ gofres[numElegir-1] +" ||");
+                        NomDeProductosComprados[tamCuenta] += gofres[numElegir-1];
+                        cuenta[tamCuenta] += precioGofres[numElegir-1];
                         tamCuenta++;
-                        
+
                        System.out.println("Cantidad de productos elegidos "+ tamCuenta);
                     }
-        
-                break;
 
-                case 2: 
-                        System.out.println("||¿Deseas este producto? "+ gofres[1]+ " ||");
-
-                        System.out.println("si - no");
-                         charConfirmar = ch.confirmarPedido();
-
-                    if (charConfirmar == 's') 
-                    {
-                        System.out.println("||Elegiste... "+ gofres[1] +" ||");
-                        NomDeProductosComprados[tamCuenta] += gofres[1];
-                        cuenta[tamCuenta] += precioGofres[1];
-                        tamCuenta++;
-                        
-                       System.out.println("Cantidad de productos elegidos "+ tamCuenta);
-                    }
-                break;
-
-                
-                case 3: System.out.println("||¿Deseas este producto? "+ gofres[2]+ " ||");
-
-                        System.out.println("si - no");
-                        charConfirmar = ch.confirmarPedido();
-
-                        if (charConfirmar == 's') 
-                        {
-                            System.out.println("||Elegiste... "+ gofres[2] +" ||");
-                            NomDeProductosComprados[tamCuenta] += gofres[2];
-                            cuenta[tamCuenta] += precioGofres[2];
-                        tamCuenta++;
-                        
-                       System.out.println("Cantidad de productos elegidos "+ tamCuenta);
-                        }
-                break;
-            
-                default:System.out.println("||Elegiste... "+ " una opción incorrecta||");
-               
-                break;
-            }
-
+            }else System.out.println("Opción incorrecta");
 
         } while (numElegir != 0);
     }
@@ -434,66 +333,29 @@ public class Productos {
             }
            
             numElegir = ch.pedirNumero();
+            if (numElegir == 0) 
+            { 
+                break;  
+            }
+            else if (numElegir > 0 && numElegir < 4)
+            {
 
-            switch (numElegir) {
-
-                case 1: System.out.println("||¿Deseas este producto? "+ bebidas[0]+ " ||");
+                 System.out.println("||¿Deseas este producto? "+bebidas[numElegir-1]+ " ||");
 
                 System.out.println("si - no");
                     char charConfirmar = ch.confirmarPedido();
 
                     if (charConfirmar == 's') 
                     {
-                        System.out.println("||Elegiste... "+ bebidas[0] +" ||");
-                        NomDeProductosComprados[tamCuenta] += bebidas[0];
-                        cuenta[tamCuenta] += precioBebidas[0];
+                        System.out.println("||Elegiste... "+ bebidas[numElegir-1] +" ||");
+                        NomDeProductosComprados[tamCuenta] += bebidas[numElegir-1];
+                        cuenta[tamCuenta] += precioBebidas[numElegir-1];
                         tamCuenta++;
-                        
+
                        System.out.println("Cantidad de productos elegidos "+ tamCuenta);
                     }
-        
-                break;
 
-                case 2: 
-                        System.out.println("||¿Deseas este producto? "+ bebidas[1]+ " ||");
-
-                        System.out.println("si - no");
-                         charConfirmar = ch.confirmarPedido();
-
-                    if (charConfirmar == 's') 
-                    {
-                        System.out.println("||Elegiste... "+ bebidas[1] +" ||");
-                        NomDeProductosComprados[tamCuenta] += bebidas[1];
-                        cuenta[tamCuenta] += precioBebidas[1];
-                        tamCuenta++;
-                        
-                       System.out.println("Cantidad de productos elegidos "+ tamCuenta);
-                    }
-                break;
-
-                
-                case 3: System.out.println("||¿Deseas este producto? "+ bebidas[2]+ " ||");
-
-                        System.out.println("si - no");
-                        charConfirmar = ch.confirmarPedido();
-
-                        if (charConfirmar == 's') 
-                        {
-                            System.out.println("||Elegiste... "+ bebidas[2] +" ||");
-                            NomDeProductosComprados[tamCuenta] += bebidas[2];
-                            cuenta[tamCuenta] += precioBebidas[2];
-                            tamCuenta++;
-                            
-                           System.out.println("Cantidad de productos elegidos "+ tamCuenta);
-                        }
-                break;
-            
-                default:System.out.println("||Elegiste... "+ " una opción incorrecta||");
-               
-                break;
-            }
-
-
+            }else System.out.println("Opción incorrecta");
 
         } while (numElegir != 0);
     }
