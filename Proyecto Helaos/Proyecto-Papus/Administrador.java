@@ -3,11 +3,9 @@ public class Administrador {
     menusClientes menuCliente = new menusClientes();
     Productos productos = new Productos();
     heladosMain main = new heladosMain();
-
-
     private int pass_Administrador;
     private String semilla = "papus@";
-    
+
 
     public void ingresoAdministrador() {
         pass_Administrador = ch.pedirNumero();
@@ -24,7 +22,7 @@ public class Administrador {
         String palabraSegura;
         do {
             System.out.println("***Ajustes del sistema***\n"
-                    + "1. ver ventas \n"
+                    + "1. cambiar precios \n"
                     + "2. Mostrar promedio \n"
                     + "3. total pedidos \n"
                     + "4. Modificar inventario \n"
@@ -33,16 +31,32 @@ public class Administrador {
             ch.evitarSaltoDeEnteros();
             switch (opcion) {
                 case 1:
-                    
-                    System.out.println("Estás viendo el historial de compra");
-                      main.mostrarHistorialDeVentas(null, null, productos);
+                    System.out.println("Estas modificando los precios");
+                    System.out.println("Ingresa la palabra clave para continuar");
+
+                    palabraSegura = ch.pedirString();
+
+                    if (semilla.equals(palabraSegura)) {
+                        System.out.println("Mostrando inventario");
+                        System.out.println("Seleccione lo que desea cambiar");
+
+                        productos.cambiarPrecioProductos();
+
+                    } else {
+                        System.out.println("Ingrese la palabra segura (semilla)");
+                    }
+
+
                     break;
                 case 2:
                     System.out.println("Estás viendo el promedio");
+                    //sumaoria de pedido entre la cantidad un contador de ingresos
                     break;
                 case 3:
                     System.out.println("Estás viendo la cantidad de pedidos");
-                    System.out.println(menuCliente.getCantidadClientes());
+                    System.out.println(menuCliente.getCantidadPersonas());
+                    System.out.println(productos.getContadorHelados());
+                    System.out.println("para pensar");
                     break;
                 case 4:
                     System.out.println("Estas modificando el inventario");
@@ -71,9 +85,6 @@ public class Administrador {
 
     }
 
-   
-
-    
 
 }
 

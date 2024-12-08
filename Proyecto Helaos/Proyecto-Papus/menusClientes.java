@@ -1,37 +1,31 @@
-
-
 public class menusClientes {
     CajaDeHerramientas ch = new CajaDeHerramientas();
     Productos productos = new Productos();
-    
-    
-    
-    //cambiar esto
-    protected int cantidadClientes = pedirCantidadClientes();
     protected String arrayOpcionCliente[];
-    
-   
-    
+    protected int cantidadPersonas;
 
-    
-    
+    public menusClientes() {
+        cantidadPersonas = pedirClientes();
+    }
 
+    public int pedirClientes() {
+        System.out.println("Ingresa clientes");
+        return ch.pedirNumero();
+    }
 
+    public void arrayParaClientes() {
 
-    public  int pedirCantidadClientes(){
-        System.out.println("Ingresa la cantidad de clientes");
-        cantidadClientes = ch.pedirNumero();
-        return cantidadClientes;
+        arrayOpcionCliente = new String[cantidadPersonas];
+        for (int i = 0; i < arrayOpcionCliente.length; i++) {
+            System.out.println("Cliente #" + (i + 1));
+            mostrarMenu();
+        }
+
     }
 
     public void mostrarMenu() {
-        
+        productos.contadoresProductos();
         productos.darIdCliente();
-
-        arrayOpcionCliente = new String[cantidadClientes];
-        for (int i = 0; i <arrayOpcionCliente.length ; i++) {
-            System.out.println("Cliente #" + (i+1));
-        }
         int numPedido = 0;
         do {
             System.out.println(" ");
@@ -66,7 +60,6 @@ public class menusClientes {
 
         } while (numPedido != 6 && numPedido < 6 && numPedido > 0);
 
-    
 
     }
 
@@ -74,6 +67,7 @@ public class menusClientes {
         switch (numPedido) {
             case 1:
                 productos.getHelados();
+
                 break;
 
             case 2:
@@ -97,7 +91,7 @@ public class menusClientes {
         }
     }
 
-    public int getCantidadClientes() {
-        return cantidadClientes;
+    public int getCantidadPersonas() {
+        return cantidadPersonas;
     }
 }
