@@ -19,7 +19,10 @@ public class Productos {
 
     public int contadoresProductos(){
         int total = contadorHelados + contadorGranizados + contadorGofres + contadorBebidas;
-        System.out.println("Helados" + contadorHelados +"Granizaddos"+ contadorGranizados +"Gofres"+ contadorGofres +"Bebidas"+ contadorBebidas);
+        System.out.println("Helados" + contadorHelados+"\n"
+                +"Granizaddos"+ contadorGranizados+ "\n"
+                +"Gofres"+ contadorGofres +"\n"+
+                "Bebidas"+ contadorBebidas);
         return total;
     }
 
@@ -310,14 +313,13 @@ public class Productos {
             if (numElegir == 0) {
                 break;
             } else if (numElegir > 0 && numElegir < 4) {
-
                 System.out.println("||¿Deseas este producto? " + helados[numElegir - 1] + " ||");
 
                 System.out.println("si - no");
                 char charConfirmar = ch.confirmarPedido();
 
                 if (charConfirmar == 's') {
-                    contadorHelados+=1;
+                    contadorHelados = contadorHelados + 1;
                     System.out.println("||Elegiste... " + helados[numElegir - 1] + " ||");
                     NomDeProductosComprados[tamCuenta] += helados[numElegir - 1];
                     cuenta[tamCuenta] += precioHelados[numElegir - 1];
@@ -459,4 +461,5 @@ public class Productos {
     public int getTamCuenta() {
         return tamCuenta;
     }
+
 }

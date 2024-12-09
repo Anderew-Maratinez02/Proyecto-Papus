@@ -51,7 +51,7 @@ public class heladosMain {
     public static void elegirMenuMain(CajaDeHerramientas ch, int numPedido, menusClientes menuClientes1, Administrador menuAdministrador) {
         switch (numPedido) {
             case 1:
-                menuClientes1.arrayParaClientes();
+                menuClientes1.mostrarMenu();
 
                 break;
 

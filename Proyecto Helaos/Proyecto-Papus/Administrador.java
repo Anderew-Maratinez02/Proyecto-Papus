@@ -55,7 +55,7 @@ public class Administrador {
                 case 3:
                     System.out.println("Estás viendo la cantidad de pedidos");
                     System.out.println(menuCliente.getCantidadPersonas());
-                    System.out.println(productos.getContadorHelados());
+                    System.out.println(menuCliente.getContadorHelados());
                     System.out.println("para pensar");
                     break;
                 case 4:
