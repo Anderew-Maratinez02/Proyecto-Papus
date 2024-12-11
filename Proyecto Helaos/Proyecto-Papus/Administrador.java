@@ -2,7 +2,7 @@ public class Administrador {
     CajaDeHerramientas ch = new CajaDeHerramientas();
     menusClientes menuCliente = new menusClientes();
     Productos productos = new Productos();
-    heladosMain main = new heladosMain();
+    heladosMain main = new heladosMain(); //??? aun no se usa
     private int pass_Administrador;
     private String semilla = "papus@";
 
@@ -21,7 +21,7 @@ public class Administrador {
         int opcion;
         String palabraSegura;
         do {
-            System.out.println("***Ajustes del sistema***\n"
+            System.out.println("Ajustes del sistema\n"
                     + "1. cambiar precios \n"
                     + "2. Mostrar promedio \n"
                     + "3. total pedidos \n"
@@ -50,12 +50,11 @@ public class Administrador {
                     break;
                 case 2:
                     System.out.println("Estás viendo el promedio");
-                    //sumaoria de pedido entre la cantidad un contador de ingresos
+                    //sumatoria de pedidos entre la cantidad de personas y un futuro un contador de ingresos
                     break;
                 case 3:
                     System.out.println("Estás viendo la cantidad de pedidos");
                     System.out.println(menuCliente.getCantidadPersonas());
-                    System.out.println(menuCliente.getContadorHelados());
                     System.out.println("para pensar");
                     break;
                 case 4:

@@ -2,47 +2,19 @@ public class menusClientes {
     CajaDeHerramientas ch = new CajaDeHerramientas();
     Productos productos = new Productos();
     protected String arrayOpcionCliente[];
-    protected int cantidadPersonas;
-    protected int contadorHelados;
-    protected int contadorGranizados;
-    protected int contadorGofres;
-    protected int contadorBebidas;
+    protected int cantidadPersonas = cantidadPersonasEsperada(); //corregirrrr
+    protected int cantidadTemporal = cantidadPersonas;
 
-    public int contadoresProductos(int cHelados, int cGranizados, int cGofres, int cBebidas) {
-        this.contadorHelados = cHelados;
-        this.contadorGranizados = cGranizados;
-        this.contadorGofres = cGofres;
-        this.contadorBebidas = cBebidas;
-        int total = contadorHelados + contadorGranizados + contadorGofres + contadorBebidas;
-        System.out.println("Helados" + contadorHelados + "\n"
-                + "Granizaddos" + contadorGranizados + "\n"
-                + "Gofres" + contadorGofres + "\n" +
-                "Bebidas" + contadorBebidas);
-        return total;
-    }
-
-
-    public menusClientes() {
-        cantidadPersonas = pedirClientes();
-    }
-
-    public int pedirClientes() {
-        System.out.println("Ingresa clientes");
+    public int cantidadPersonasEsperada() {
+        System.out.println("Ingresa cantidad de personas");
         return ch.pedirNumero();
     }
 
-    public void arrayParaClientes() {
-
-        arrayOpcionCliente = new String[cantidadPersonas];
-//        for (int i = 0; i < arrayOpcionCliente.length; i++) {
-//            System.out.println("Cliente #" + (i + 1));
-//        }
-
-    }
 
     public void mostrarMenu() {
-        arrayParaClientes();
-        productos.contadoresProductos();
+
+        ch.evitarSaltoDeEnteros();
+        arrayOpcionCliente = new String[cantidadTemporal];
         productos.darIdCliente();
         int numPedido = 0;
         for (int i = 0; i < arrayOpcionCliente.length; i++) {
@@ -76,33 +48,29 @@ public class menusClientes {
                     System.out.println("Opción invalida");
                 }
 
-                elegirMenuClientes(numPedido, productos, contadorHelados, contadorGranizados, contadorGofres, contadorBebidas);
+                elegirMenuClientes(numPedido, productos);
 
             } while (numPedido != 6 && numPedido < 6 && numPedido > 0);
 
         }
     }
 
-    public static void elegirMenuClientes(int numPedido, Productos productos, int contadorHelados, int contadorGranizados, int contadorGofres, int contadorBebidas) {
+    public static void elegirMenuClientes(int numPedido, Productos productos) {
         switch (numPedido) {
             case 1:
                 productos.getHelados();
-                contadorHelados++;
                 break;
 
             case 2:
                 productos.getGranizados();
-                contadorGranizados++;
                 break;
 
             case 3:
                 productos.getGofres();
-                contadorGofres++;
                 break;
 
             case 4:
                 productos.getBebidas();
-                contadorBebidas++;
                 break;
 
             case 5:
@@ -116,13 +84,5 @@ public class menusClientes {
 
     public int getCantidadPersonas() {
         return cantidadPersonas;
-    }
-
-    public int getContadorHelados() {
-        return contadorHelados;
-    }
-
-    public void setContadorHelados(int contadorHelados) {
-        this.contadorHelados = contadorHelados;
     }
 }

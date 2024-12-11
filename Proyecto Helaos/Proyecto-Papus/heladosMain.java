@@ -38,7 +38,6 @@ public class heladosMain {
             if (numPedido > 3 || numPedido < 0) {
                 System.out.println("Opción inválida");
             }
-
             elegirMenuMain(ch, numPedido, menuClientes1, menuAdministrador);
             obtenerInformacion(historialPrecioCompra, historialIdCliente, contadorArray, productos);
             productos.resetearCuenta();

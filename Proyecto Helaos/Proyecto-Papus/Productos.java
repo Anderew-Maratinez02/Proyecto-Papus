@@ -17,16 +17,6 @@ public class Productos {
     private int contadorGofres = 0;
     private int contadorBebidas = 0;
 
-    public int contadoresProductos(){
-        int total = contadorHelados + contadorGranizados + contadorGofres + contadorBebidas;
-        System.out.println("Helados" + contadorHelados+"\n"
-                +"Granizaddos"+ contadorGranizados+ "\n"
-                +"Gofres"+ contadorGofres +"\n"+
-                "Bebidas"+ contadorBebidas);
-        return total;
-    }
-
-
     private int tamCuenta;
 
     private double totalCuenta;
@@ -119,7 +109,7 @@ public class Productos {
 
     }
 
-    protected void cambiarNombreProductos() { // Esta funcion aun no esta en uso y podrias meterla en administrador
+    protected void cambiarNombreProductos() { // Esta funcion aun no esta en uso y podrias meterla en administrador borrar esta linea pera ahora no
         int numElegir = 0;
         int numElegirProducto = 0;
         String nombreNuevo = "jija";
@@ -207,6 +197,7 @@ public class Productos {
             }
         } while (numElegir != 5);
     }
+
     protected void cambiarPrecioProductos() { //version de prueba
         int numElegir = 0;
         int numElegirProducto = 0;
@@ -226,71 +217,76 @@ public class Productos {
 
             switch (numElegir) {
                 case 1:
+                    System.out.println("Precio de los helados disponibles");
                     for (int i = 0; i < precioHelados.length; i++) {
-                        System.out.println("º" + (i + 1) + " " + precioHelados[i]);
+                        System.out.println("º" + (i + 1) + " " + helados[i] + " " + precioHelados[i]); //// aqui
                     }
-                    System.out.println("Estas cambiando... Helados, elige cual cambiar");
+                    System.out.println("Elige el helado al que desea cambiar su valor (ingrese un número entre 1 al 3)");
                     numElegirProducto = ch.pedirNumero();
-
                     if (numElegir > 0 && numElegir < 4) {
-
-
                         ch.evitarSaltoDeEnteros();
-
-                        nuevoValor = ch.pedirNumero();
+                        System.out.println("Por favor ingrese nuevo valor para " + helados[numElegirProducto - 1]);
+                        nuevoValor = ch.pedirDoubles();
                         precioHelados[numElegirProducto - 1] = nuevoValor;
-                    } else System.out.println("Opción desconocida");
+                    } else System.out.println("Opción no válida");
                     break;
 
                 case 2:
+                    System.out.println("Precio de los granizados disponibles");
                     for (int i = 0; i < precioGranizado.length; i++) {
-                        System.out.println("º" + (i + 1) + " " + precioGranizado[i]);
+                        System.out.println("º" + (i + 1) + " " + granizado[i] + " " + precioGranizado[i]);
                     }
-                    System.out.println("Estas cambiando... granizados, elige cual cambiar");
+                    System.out.println("Elige el granizado al que desea cambiar su valor (ingrese un número entre 1 al 3)");
                     numElegirProducto = ch.pedirNumero();
 
                     if (numElegir > 0 && numElegir < 4) {
                         ch.evitarSaltoDeEnteros();
-
-                        nuevoValor = ch.pedirNumero();
+                        System.out.println("Por favor ingrese nuevo valor para " + granizado[numElegirProducto - 1]);
+                        nuevoValor = ch.pedirDoubles();
                         precioGranizado[numElegirProducto - 1] = nuevoValor;
-                    } else System.out.println("Opción desconocida");
+                    } else System.out.println("Opción no válida");
                     break;
 
                 case 3:
+                    System.out.println("Precio de los Gofres disponibles");
                     for (int i = 0; i < precioGofres.length; i++) {
-                        System.out.println("º" + (i + 1) + " " + precioGofres[i]);
+                        System.out.println("º" + (i + 1) + " " + gofres[i] + " " + precioGofres[i]);
                     }
-                    System.out.println("Estas cambiando... gofres, elige cual cambiar");
+                    System.out.println("Elige el Gofre al que desea cambiarle su valor (ingrese un número entre 1 al 3)");
                     numElegirProducto = ch.pedirNumero();
 
                     if (numElegir > 0 && numElegir < 4) {
                         ch.evitarSaltoDeEnteros();
+                        System.out.println("Por favor ingrese nuevo valor para " + gofres[numElegirProducto - 1]);
 
-
-                        nuevoValor = ch.pedirNumero();
+                        nuevoValor = ch.pedirDoubles();
                         precioGofres[numElegirProducto - 1] = nuevoValor;
-                    } else System.out.println("Opción desconocida");
+                    } else System.out.println("Opción no válida");
                     break;
 
                 case 4:
+                    System.out.println("Precio de las Bebidas disponibles");
                     for (int i = 0; i < precioBebidas.length; i++) {
-                        System.out.println("º" + (i + 1) + " " + precioBebidas[i]);
+                        System.out.println("º" + (i + 1) + bebidas[i] + " " + " " + precioBebidas[i]);
                     }
-                    System.out.println("Estas cambiando... bebidas, elige cual cambiar");
+                    System.out.println("Elige a la Bebida a la que desea cambiarle su valor (ingrese un número entre 1 al 3)");
                     numElegirProducto = ch.pedirNumero();
 
-                    if (numElegir > 0 && numElegir < 4) {
+                    if (numElegir > 0 && numElegir < 5) {
                         ch.evitarSaltoDeEnteros();
+                        System.out.println("Por favor ingrese nuevo valor para " + bebidas[numElegirProducto - 1]);
 
-
-                        nuevoValor = ch.pedirNumero();
+                        nuevoValor = ch.pedirDoubles();
                         precioBebidas[numElegirProducto - 1] = nuevoValor;
-                    } else System.out.println("Opción desconocida");
+                    } else System.out.println("Opción no válida");
                     break;
-
+                case 5:
+                    if (numElegir == 5) {
+                        System.out.println("Saliendo del apartado de cambiar precios a los productos");
+                    }
+                    break;
                 default:
-                    System.out.println("Opcion de clase de producto incorrecta o desconocida");
+                    System.out.println("Por favor verifique el dato ingresado");
                     break;
             }
         } while (numElegir != 5);
@@ -298,6 +294,7 @@ public class Productos {
 
 
     public void getHelados() {
+        contadorHelados++;
         int numElegir = 0;
         do {
             System.out.println(" ");
@@ -448,14 +445,6 @@ public class Productos {
             } else System.out.println("Opción incorrecta");
 
         } while (numElegir != 0);
-    }
-
-    public int getContadorHelados() {
-        return contadorHelados;
-    }
-
-    public void setContadorHelados(int contadorHelados) {
-        this.contadorHelados = contadorHelados;
     }
 
     public int getTamCuenta() {

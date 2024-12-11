@@ -7,6 +7,10 @@ public class CajaDeHerramientas {
         return sc.nextInt();
     }
 
+    public double pedirDoubles() {
+        return sc.nextDouble();
+    }
+
     public String pedirString() {
         String palabraClave = sc.nextLine();
         return palabraClave;
@@ -21,4 +25,6 @@ public class CajaDeHerramientas {
     public void evitarSaltoDeEnteros() {
         sc.nextLine();
     }
+
 }
+
