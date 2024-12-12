@@ -445,7 +445,7 @@ public class Productos {
             } else System.out.println("Opción incorrecta");
 
         } while (numElegir != 0);
-    }
+    }  
 
     public int getTamCuenta() {
         return tamCuenta;

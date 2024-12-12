@@ -56,7 +56,7 @@ public class heladosMain {
 
             case 2:
                 System.out.println("Ingrese el pin de acceso");
-                menuAdministrador.ingresoAdministrador();
+                menuAdministrador.ingresoAdministrador(menuClientes1);
                 break;
             case 3:
                 System.out.println("Saliendo del menú");
