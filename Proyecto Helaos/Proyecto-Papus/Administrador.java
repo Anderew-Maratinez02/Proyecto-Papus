@@ -6,7 +6,14 @@ public class Administrador {
     private int pass_Administrador;
     private String semilla = "papus@";
 
+    private double compra;
+    private int idCliente;
 
+    private int contadorArray = 1;
+    private double historialPrecioCompra[] = new double[contadorArray];
+    private int historialIdCliente[] = new int[contadorArray];
+
+    
     public void ingresoAdministrador() {
         pass_Administrador = ch.pedirNumero();
         if (pass_Administrador == 1233) {
@@ -84,6 +91,32 @@ public class Administrador {
 
     }
 
+    public void copiarCuenta ()
+    {
+        compra = menuCliente.productos.getTotalCuenta();
+        idCliente =  menuCliente.productos.getIdCliente();
 
+        System.out.println(compra+idCliente);
+    }
+
+    public void obtenerInformacion() {
+        for (int j = 0; j < contadorArray;j++)
+        {
+
+    
+        historialPrecioCompra[j] = compra;
+        historialIdCliente[j] = idCliente;
+
+        System.out.println("Ciente #ID " + historialIdCliente[j] + " " + historialPrecioCompra[j] + " $");
+        }
+        contadorArray++;
+    }
+
+    public void mostrarHistorialDeVentas() {
+        for (int i = 0; i < contadorArray; i++) {
+            System.out.println("Ciente ID " + historialIdCliente[i] + " " + historialPrecioCompra[i] + " $");
+
+        }
+    }
 }
 

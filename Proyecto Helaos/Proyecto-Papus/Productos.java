@@ -1,5 +1,7 @@
 public class Productos {
     CajaDeHerramientas ch = new CajaDeHerramientas();
+    
+
     private String[] helados;
     private String[] granizado;
     private String[] gofres;
@@ -12,15 +14,17 @@ public class Productos {
 
     private double[] cuenta;
     private String[] NomDeProductosComprados;
+
     private int contadorHelados = 0;
+
     private int contadorGranizados = 0;
     private int contadorGofres = 0;
     private int contadorBebidas = 0;
 
     private int tamCuenta;
 
-    private double totalCuenta;
-    private int idCliente;
+    private double totalCuenta = 0;
+    private int idCliente = 0;
 
 
     protected Productos() {
@@ -33,8 +37,7 @@ public class Productos {
         this.precioGofres = new double[]{6.5, 6.5, 8};
         this.precioBebidas = new double[]{3, 4, 6.99};
         this.tamCuenta = 0;
-        this.totalCuenta = 0.0;
-        this.idCliente = 0;
+        
         this.cuenta = new double[25];
         this.NomDeProductosComprados = new String[25];
         this.contadorHelados = 0;
@@ -43,6 +46,7 @@ public class Productos {
         this.contadorBebidas = 0;
 
     }
+
 
 
     public void darIdCliente() {
@@ -67,16 +71,12 @@ public class Productos {
         return idCliente;
     }
 
-    protected Productos(final Productos historialCompra) {
-
-        this.totalCuenta = historialCompra.totalCuenta;
-        this.idCliente = historialCompra.idCliente;
-    }
-
     protected void resetearCuenta() {
         for (int i = 0; i < cuenta.length; i++) {
             cuenta[i] = 0;
-            NomDeProductosComprados[i] = " ";
+            NomDeProductosComprados[i] = "";
+            totalCuenta = 0;
+            idCliente = 0;
         }
         idCliente = 0;
     }
@@ -307,9 +307,7 @@ public class Productos {
 
             }
             numElegir = ch.pedirNumero();
-            if (numElegir == 0) {
-                break;
-            } else if (numElegir > 0 && numElegir < 4) {
+            if (numElegir > 0 && numElegir < 4) {
                 System.out.println("||¿Deseas este producto? " + helados[numElegir - 1] + " ||");
 
                 System.out.println("si - no");
@@ -343,9 +341,7 @@ public class Productos {
             }
             numElegir = ch.pedirNumero();
 
-            if (numElegir == 0) {
-                break;
-            } else if (numElegir > 0 && numElegir < 4) {
+             if (numElegir > 0 && numElegir < 4) {
 
                 System.out.println("||¿Deseas este producto? " + granizado[numElegir - 1] + " ||");
 
@@ -383,9 +379,7 @@ public class Productos {
 
             }
             numElegir = ch.pedirNumero();
-            if (numElegir == 0) {
-                break;
-            } else if (numElegir > 0 && numElegir < 4) {
+             if (numElegir > 0 && numElegir < 4) {
 
                 System.out.println("||¿Deseas este producto? " + gofres[numElegir - 1] + " ||");
 
@@ -424,9 +418,7 @@ public class Productos {
             }
 
             numElegir = ch.pedirNumero();
-            if (numElegir == 0) {
-                break;
-            } else if (numElegir > 0 && numElegir < 4) {
+             if (numElegir > 0 && numElegir < 4) {
 
                 System.out.println("||¿Deseas este producto? " + bebidas[numElegir - 1] + " ||");
 
