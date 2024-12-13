@@ -1,12 +1,6 @@
-
-
 public class menusClientes {
     CajaDeHerramientas ch = new CajaDeHerramientas();
     Productos productos2 = new Productos();
-
-   
-   
-    
 
     public void mostrarMenu() {
        
@@ -15,7 +9,7 @@ public class menusClientes {
     
             do {
                 System.out.println(" ");
-                System.out.println("elige un apartado del menú del 1 al 5");
+                System.out.println("Elige un apartado del menú del 1 al 5");
                 System.out.println(" ");
 
                 System.out.println("1. Helados fríos");
@@ -74,7 +68,6 @@ public class menusClientes {
             productos2.soloMostrarCuenta();
            
                 break;
-
             default:
                 break;
         }

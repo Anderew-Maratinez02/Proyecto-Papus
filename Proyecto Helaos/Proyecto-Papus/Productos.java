@@ -309,7 +309,7 @@ public class Productos {
             System.out.println(" ");
 
             for (int i = 0; i < helados.length; i++) {
-                System.out.println("º" + (i + 1) + " " + helados[i] + " " + precioHelados[i] + " $");
+                System.out.println((i + 1) + ". " + helados[i] + " " + precioHelados[i] + " $");
                 System.out.println("-------------------");
 
             }
@@ -342,7 +342,7 @@ public class Productos {
             System.out.println(" ");
 
             for (int a = 0; a < granizado.length; a++) {
-                System.out.println("º" + (a + 1) + " " + granizado[a] + " " + precioGranizado[a] + " $");
+                System.out.println((a + 1) + ". " + granizado[a] + " " + precioGranizado[a] + " $");
                 System.out.println("-------------------");
 
             }
@@ -380,7 +380,7 @@ public class Productos {
 
             {
                 for (int b = 0; b < gofres.length; b++)
-                    System.out.println("º" + (b + 1) + " " + gofres[b] + " " + precioGofres[b] + " $");
+                    System.out.println((b + 1) + ". " + gofres[b] + " " + precioGofres[b] + " $");
                 System.out.println("-------------------");
 
 
@@ -418,7 +418,7 @@ public class Productos {
 
             {
                 for (int c = 0; c < bebidas.length; c++)
-                    System.out.println("º" + (c + 1) + " " + bebidas[c] + " " + precioBebidas[c] + " $");
+                    System.out.println((c + 1) + ". " + bebidas[c] + " " + precioBebidas[c] + " $");
                 System.out.println("-------------------");
 
 
@@ -446,8 +446,5 @@ public class Productos {
         } while (numElegir != 0);
     }
 
-    public int getTamCuenta() {
-        return tamCuenta;
-    }
 
 }
