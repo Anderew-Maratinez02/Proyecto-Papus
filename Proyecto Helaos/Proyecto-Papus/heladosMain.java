@@ -45,7 +45,9 @@ public class heladosMain {
            
             elegirMenuMain( ch, numPedido, menuClientes1, menuAdministrador);
             obtenerInformacion(historialPrecioCompra, historialIdCliente, contador, productos, menuClientes1);
+            mostrarHistorialDeVentas(historialPrecioCompra, historialIdCliente, productos);
            contador ++;
+
            menuClientes1.productos2.resetearCuenta();
 
         } while (numPedido != 3 && numPedido < 3 && numPedido > 0);
@@ -81,6 +83,11 @@ public class heladosMain {
         historialPrecioCompra[contador] = menuClientes1.productos2.getTotalCuenta();
         historialIdCliente[contador] = menuClientes1.productos2.getIdCliente();
         
+
+
+    }
+
+    public static void mostrarHistorialDeVentas(double historialPrecioCompra[], int historialIdCliente[], Productos productos) {
         for (int j = 0; j < historialIdCliente.length;j++)
         { 
         if (historialIdCliente[j] != 0)
@@ -89,18 +96,6 @@ public class heladosMain {
                 
             }
             
-
-        }
-        System.out.println(contador);
-        
-
-
-    }
-
-    public static void mostrarHistorialDeVentas(double historialPrecioCompra[], int historialIdCliente[], Productos productos) {
-        for (int i = 0; i < historialPrecioCompra.length; i++) {
-            System.out.println("Ciente º " + historialIdCliente[i] + " " + historialPrecioCompra[i] + " $");
-
         }
     }
 
