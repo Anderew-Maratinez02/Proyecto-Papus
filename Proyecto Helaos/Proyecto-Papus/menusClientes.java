@@ -6,18 +6,19 @@ public class menusClientes {
    
     
     protected String arrayOpcionCliente[];
-    protected int cantidadPersonas = cantidadPersonasEsperada(); //corregirrrr
+    protected int cantidadPersonas = 0 ; //corregirrrr
     protected int cantidadTemporal = cantidadPersonas;
    
 
     public int cantidadPersonasEsperada() {
         System.out.println("Ingresa cantidad de personas");
-        return ch.pedirNumero();
+        cantidadPersonas = ch.pedirNumero();
+        return cantidadPersonas;
     }
 
 
     public void mostrarMenu() {
-
+        cantidadPersonas = cantidadPersonasEsperada();
         ch.evitarSaltoDeEnteros();
         arrayOpcionCliente = new String[cantidadTemporal];
         productos2.darIdCliente();

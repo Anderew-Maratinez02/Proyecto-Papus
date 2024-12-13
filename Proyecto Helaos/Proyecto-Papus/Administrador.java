@@ -1,6 +1,5 @@
 public class Administrador {
     CajaDeHerramientas ch = new CajaDeHerramientas();
-   // menusClientes menuCliente = new menusClientes(); da error
     Productos productos = new Productos();
     menusClientes mc = new menusClientes(); 
     heladosMain main = new heladosMain();
@@ -24,17 +23,17 @@ public class Administrador {
         this.historialIdCliente = historialIdCliente = new int [100];
     }
 
-    public void ingresoAdministrador() {
+    public void ingresoAdministrador(menusClientes menuCliente) {
         pass_Administrador = ch.pedirNumero();
         if (pass_Administrador == 1233) {
             System.out.println("Acceso válido");
-            menuOpcionesAdministrador();
+            menuOpcionesAdministrador(menuCliente);
         } else {
             System.out.println("Accseso no válido");
         }
     }
 
-    public void menuOpcionesAdministrador() {
+    public void menuOpcionesAdministrador(menusClientes menuCliente) {
         int opcion;
         String palabraSegura;
         do {
@@ -67,9 +66,10 @@ public class Administrador {
                     break;
                 case 2:
                     System.out.println("Estás viendo el promedio");
-                    //sumatoria de pedidos entre la cantidad de personas y un futuro un contador de ingresos
+
                     break;
                 case 3:
+                    System.out.println("1");
                     System.out.println("Estás viendo la cantidad de pedidos");
                    // da error System.out.println(menuCliente.getCantidadPersonas());
                     System.out.println("para pensar");
