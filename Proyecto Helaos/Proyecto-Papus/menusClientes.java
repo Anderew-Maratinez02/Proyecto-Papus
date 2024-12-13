@@ -5,7 +5,7 @@ public class menusClientes {
    
    
     /** 
-     * @param setHistorialIdClienteAdmin
+     * setHistorialIdClienteAdmin
      * 
      * 
      * En este metodo se mostrará el menu de los clientes que se puede acceder a traves del menu principal del main
@@ -56,7 +56,7 @@ public class menusClientes {
         }
     
     /** 
-     * @param elegirMenuClientes
+     * elegirMenuClientes
      * 
      * 
      * Submetodo del menuClientes que te da a elegir entre una serie de productos 
@@ -67,7 +67,7 @@ public class menusClientes {
     {
         switch (numPedido) {
             case 1:
-                productos2.elegirGofres(); //metodo de productos que muestra todos los productos de una categoría para comprarlo
+                productos2.elegirHelados(); //metodo de productos que muestra todos los productos de una categoría para comprarlo
                 
                 break;
 

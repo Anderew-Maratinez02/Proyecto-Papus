@@ -314,7 +314,7 @@ public class Productos {
                     
                 }
 
-            } else System.out.println("Opción incorrecta");
+            } else System.out.println("Volviste al apartado principal...");
         } while (numElegir != 0);
 
     }
@@ -350,7 +350,7 @@ public class Productos {
                     
                 }
 
-            } else System.out.println("Opción incorrecta");
+            } else System.out.println("Volviste al apartado principal...");
 
         } while (numElegir != 0);
     }
@@ -389,7 +389,7 @@ public class Productos {
                     
                 }
 
-            } else System.out.println("Opción incorrecta");
+            } else System.out.println("Volviste al apartado principal...");
 
         } while (numElegir != 0);
     }
@@ -429,7 +429,7 @@ public class Productos {
                     
                 }
 
-            } else System.out.println("Opción incorrecta");
+            } else System.out.println("Volviste al apartado principal...");
 
         } while (numElegir != 0);
     }

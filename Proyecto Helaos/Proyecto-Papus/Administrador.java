@@ -28,7 +28,7 @@ public class Administrador {
 
     
     /** 
-     * @param menuOpcionesAdministrador
+     * menuOpcionesAdministrador
      * 
      * Metodo que muestra un menú del Administrador para dar a elegir entre 9 opciones el cual se
      * podrán realizar operaciones de gestión sobre los registros de compras, cambios de nombres y precios en productos
