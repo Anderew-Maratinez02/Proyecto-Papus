@@ -1,20 +1,32 @@
 public class Administrador {
     CajaDeHerramientas ch = new CajaDeHerramientas();
-    Productos productos = new Productos();
     menusClientes menusCliente = new menusClientes();
 
-    private int pass_Administrador;
-    private String semilla = "papus@";
+    private int pass_Administrador; // contraseña administrador
+    private String semilla = "papus@"; // Contraseña semilla
 
     
+     /** 
+     * 
+     * @param numeroDeClientes
+     * @param historialPrecioCompraAdmin
+     * @param historialIdClienteAdmin
+     * 
+     * @param setnumeroDeClientes
+     * @param setHistorialPrecioCompraAdmin
+     * @param setHistorialIdClienteAdmin
+     * 
+     * 
+     * Estos atributos guardarán los registros del class MenuClientes que son recogidos a traves del main
+     * en el metodo obtenerInformacion y sus correspondientes setters empleados en el main
+     */
 
     private int numeroDeClientes = 0;
-
     private double historialPrecioCompraAdmin[] ;
     private int historialIdClienteAdmin[] ;
 
  
-    public void ingresoAdministrador(menusClientes menuCliente) 
+    public void ingresoAdministrador(menusClientes menuCliente)//metodo para introducir una contraseña 
     {
         pass_Administrador = ch.pedirNumero();
         if (pass_Administrador == 1233) {
@@ -25,6 +37,16 @@ public class Administrador {
         }
     }
 
+    
+
+    
+    /** 
+     * @param menuOpcionesAdministrador
+     * 
+     * Metodo que muestra un menú del Administrador para dar a elegir entre 9 opciones el cual se
+     * podrán realizar operaciones de gestión sobre los registros de compras, cambios de nombres y precios en productos
+     * 
+     */
     public void menuOpcionesAdministrador(menusClientes menuCliente) 
     {
         int opcion;
@@ -133,10 +155,7 @@ public class Administrador {
                     resetearUnSoloRegistro(); 
                     
                 } else System.out.println("!Aún no hay registros de clientes!");
-                
-                
-                    
-                    
+
                 break;
                 case 8:
                 if (numeroDeClientes > 0) 
@@ -162,7 +181,7 @@ public class Administrador {
 
     }
 
-    public void mostrarHistorialDeVentasClass() 
+    public void mostrarHistorialDeVentasClass() //metodo que te muestra registros de compras de cada cliente
     {
         for (int j = 0; j < historialIdClienteAdmin.length;j++)
         { 
@@ -175,7 +194,7 @@ public class Administrador {
         }
     }
 
-    public double sumarTodasLasCuentas ()
+    public double sumarTodasLasCuentas () //metodo de sumar todos los registros
     {double totalSuma= 0;
         for (int j = 0; j < historialPrecioCompraAdmin.length;j++)
         { 
@@ -184,14 +203,14 @@ public class Administrador {
         return totalSuma;
     }
 
-    public double promedioTodasLasCuentas ()
+    public double promedioTodasLasCuentas () //metodo de obtener el promedio de todos los registros
     {double totalpromedio= 0;
         
         totalpromedio = sumarTodasLasCuentas() / numeroDeClientes;
         return totalpromedio;
     }
 
-    public void resetearRegistros ()
+    public void resetearRegistros () // metodo para poner todos los registros a 0
     {
         for (int j = 0; j < historialPrecioCompraAdmin.length;j++)
         { 
@@ -201,7 +220,7 @@ public class Administrador {
         numeroDeClientes = 0;
     }
 
-    public void modificarUnRegistro ()
+    public void modificarUnRegistro ()  // metodo para modificar un solo registro a 0
     {int numPedido = 0; 
         for (int j = 0; j < historialPrecioCompraAdmin.length;j++)
         { 
@@ -228,7 +247,7 @@ public class Administrador {
        
     }
 
-    public void resetearUnSoloRegistro ()
+    public void resetearUnSoloRegistro () //metodo para restablecer un solo registro a 0
     {int numPedido = 0; 
         for (int j = 0; j < historialPrecioCompraAdmin.length;j++)
         { 

@@ -12,12 +12,27 @@ public class Productos {
     private double precioGofres[];
     private double precioBebidas[];
 
+    
+    /** 
+     * @param cuenta
+     * @param NomDeProductosComprado
+     * @param tamCuenta
+     * 
+     * Estos tres valores muestran el resumen del pedido que realizar el cliente en el menú de clientes.
+     * estos valores se usan en sus respectivos getters para copiar los valores al main.
+     */
     private double[] cuenta;
     private String[] NomDeProductosComprados;
-
-
     private int tamCuenta;
 
+
+ /** 
+     * @param totalCuenta
+     * @param idCliente
+     * 
+     * Estos dos atributos son el resultado final que se transfieren al main para guardar el registro del cliente
+     * estos valores se usan en el metodo (soloMostrarCuenta).
+     */
     private double totalCuenta = 0;
     private int idCliente = 0;
 
@@ -49,18 +64,7 @@ public class Productos {
         }
     }
 
-    public String[] getNomDeProductosComprados() {
-        return NomDeProductosComprados;
-    }
-
-
-    public double getTotalCuenta() {
-        return totalCuenta;
-    }
-
-    public int getIdCliente() {
-        return idCliente;
-    }
+   
 
     protected void resetearCuenta() {
         for (int i = 0; i < cuenta.length; i++) {
@@ -71,25 +75,6 @@ public class Productos {
         totalCuenta = 0;
         idCliente = 0;
         tamCuenta = 0;
-    }
-
-    protected void getTodosLosProductos() {
-        for (int i = 0; i < helados.length; i++) {
-            System.out.println(helados[i]);
-        }
-
-        for (int a = 0; a < granizado.length; a++) {
-            System.out.println(granizado[a]);
-        }
-
-        for (int b = 0; b < gofres.length; b++) {
-            System.out.println(gofres[b]);
-        }
-
-        for (int c = 0; c < bebidas.length; c++) {
-            System.out.println(bebidas[c]);
-        }
-
     }
 
     public void sumarTotalCuenta ()
@@ -111,12 +96,10 @@ public class Productos {
             System.out.println("Tu cuenta es de = " + totalCuenta);
             totalCuenta = 0; 
     }
-    public double getCuentaCliente() {
-        
-        return totalCuenta;
-    }
+    
 
-    protected void cambiarNombreProductos() { 
+    protected void cambiarNombreProductos() // metodo el cual se accede desde administrador para cambiar los nombres de productos
+    {
         int numElegir = 0;
         int numElegirProducto = 0;
         String nombreNuevo = "jijijijá";
@@ -205,7 +188,8 @@ public class Productos {
         } while (numElegir != 5);
     }
 
-    protected void cambiarPrecioProductos() {
+    protected void cambiarPrecioProductos() // metodo el cual se accede desde administrador para cambiar los precios de productos 
+    {
         int numElegir = 0;
         int numElegirProducto = 0;
         double nuevoValor = 0.0;
@@ -300,7 +284,8 @@ public class Productos {
     }
 
 
-    public void getHelados() {
+    public void elegirHelados() //Metodo de eleccion de productos que se puede acceder desde menuClientes
+    {
       
         int numElegir = 0;
         do {
@@ -334,7 +319,8 @@ public class Productos {
 
     }
 
-    protected void getGranizados() {
+    protected void elegirGranizados() //Metodo de eleccion de productos que se puede acceder desde menuClientes
+    {
         int numElegir = 0;
         do {
             System.out.println(" ");
@@ -370,7 +356,8 @@ public class Productos {
     }
 
 
-    protected void getGofres() {
+    protected void elegirGofres() //Metodo de eleccion de productos que se puede acceder desde menuClientes
+    {
         int numElegir = 0;
         do {
             System.out.println(" ");
@@ -407,7 +394,8 @@ public class Productos {
         } while (numElegir != 0);
     }
 
-    protected void getBebidas() {
+    protected void elegirBebidas() //Metodo de eleccion de productos que se puede acceder desde menuClientes
+    {
       
         int numElegir = 0;
         do {
@@ -450,4 +438,19 @@ public class Productos {
         return tamCuenta;
     }
 
+    public double getTotalCuenta() //metodo para copiar este valor a otro class o main
+    {
+        return totalCuenta;
+    }
+
+    public int getIdCliente() //metodo para copiar este valor a otro class o main
+    {
+        return idCliente;
+    }
+    
+    public double getCuentaCliente() //metodo para copiar este valor a otro class o main
+    {
+        
+        return totalCuenta;
+    }
 }

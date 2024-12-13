@@ -6,7 +6,13 @@ public class menusClientes {
 
    
    
-    
+    /** 
+     * @param setHistorialIdClienteAdmin
+     * 
+     * 
+     * En este metodo se mostrará el menu de los clientes que se puede acceder a traves del menu principal del main
+     * dando la opcion de elegir entre distintos productos dando un resultado modificable (registro de cliente).
+     */
 
     public void mostrarMenu() {
        
@@ -51,27 +57,36 @@ public class menusClientes {
 
         }
     
+    /** 
+     * @param elegirMenuClientes
+     * 
+     * 
+     * Submetodo del menuClientes que te da a elegir entre una serie de productos 
+     */
 
-    public static void elegirMenuClientes(int numPedido, Productos productos2) {
+
+    public static void elegirMenuClientes(int numPedido, Productos productos2) 
+    {
         switch (numPedido) {
             case 1:
-                productos2.getHelados();
+                productos2.elegirGofres(); //metodo de productos que muestra todos los productos de una categoría para comprarlo
+                
                 break;
 
             case 2:
-                productos2.getGranizados();
+                productos2.elegirGranizados(); //metodo de productos que muestra todos los productos de una categoría para comprarlo
                 break;
 
             case 3:
-                productos2.getGofres();
+                productos2.elegirGofres(); //metodo de productos que muestra todos los productos de una categoría para comprarlo
                 break;
 
             case 4:
-                productos2.getBebidas();
+                productos2.elegirBebidas(); //metodo de productos que muestra todos los productos de una categoría para comprarlo
                 break;
 
             case 5:
-            productos2.soloMostrarCuenta();
+            productos2.soloMostrarCuenta(); //metodo de productos que muestra todos los productos de una categoría para comprarlo
            
                 break;
 

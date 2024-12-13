@@ -3,22 +3,37 @@ public class heladosMain {
         CajaDeHerramientas ch = new CajaDeHerramientas();
         menusClientes menuClientes1 = new menusClientes();
         Administrador menuAdministrador = new Administrador();
-        Productos productos = new Productos();
+       
+        
+   
+        int contador = 0; // estos tres atributos sirven para transportar los registros de menuClientes al main y luego a Administrador
+        double historialPrecioCompra[] = new double[20] ;
+        int historialIdCliente[] = new int[20] ;
 
-        int contador = 0;
 
-        double historialPrecioCompra[] = new double[10] ;
-        int historialIdCliente[] = new int[10] ;
-
-        menuMain( contador,ch, menuClientes1, menuAdministrador, productos,historialPrecioCompra,historialIdCliente);
-          
+        menuMain( contador,ch, menuClientes1, menuAdministrador,historialPrecioCompra,historialIdCliente);
+         
     }
 
-    public static void menuMain( int contador,CajaDeHerramientas ch, menusClientes menuClientes1, Administrador menuAdministrador, Productos productos, double historialPrecioCompra[], int historialIdCliente[]) {
+    
+    /** 
+     * @param contador
+     * @param ch
+     * @param menuClientes1
+     * @param menuAdministrador
+     * @param productos
+     * @param historialPrecioCompra[]
+     * @param historialIdCliente[]
+     * 
+     * Este método es como el corazón del programa el cual conecta los dos apartados del software el cual une el apartado de 
+     * clientes y administrador en dos menús y con sus respectivos metodos.
+     * El apartado administrador actuará sobre los productos pedidos en el menuDeClientes y se guardan los registros pedidos. 
+     */
+    public static void menuMain( int contador,CajaDeHerramientas ch, menusClientes menuClientes1, Administrador menuAdministrador, double historialPrecioCompra[], int historialIdCliente[]) {
         int numPedido = 0;
         
         System.out.println();
-        System.out.println("¡Bienvenido a Heladería Papus!");
+        System.out.println("¡Bienvenido a Heladería Papús!");
 
         do {
             System.out.println(" ");
@@ -39,7 +54,7 @@ public class heladosMain {
             
            
             elegirMenuMain( ch, numPedido, menuClientes1, menuAdministrador);
-            obtenerInformacion(historialPrecioCompra, historialIdCliente, contador, productos, menuClientes1);
+            obtenerInformacion(historialPrecioCompra, historialIdCliente, contador, menuClientes1);
             
             contador ++;
 
@@ -52,6 +67,15 @@ public class heladosMain {
 
     }
 
+    
+    /** 
+     * @param ch
+     * @param numPedido
+     * @param menuClientes1
+     * @param menuAdministrador
+     * 
+     * Submetodo del metodo principal que clasifica que opciones vas a poder usar para dirigirte a menuClietes o administrador
+     */
     public static void elegirMenuMain(CajaDeHerramientas ch, int numPedido, menusClientes menuClientes1, Administrador menuAdministrador) {
         switch (numPedido) {
             case 1:
@@ -71,7 +95,18 @@ public class heladosMain {
         }
     }
 
-    public static void obtenerInformacion(double historialPrecioCompra[], int historialIdCliente[],int contador, Productos productos, menusClientes menuClientes1) {
+    
+    /** 
+     * @param historialPrecioCompra[]
+     * @param historialIdCliente[]
+     * @param contador
+     * @param productos
+     * @param menuClientes1
+     * 
+     * Metodo importante el cual copiará el total del pedido y el id del cliente a una variable temporal en el main
+     * y luego las variables a su vez se copiarán al administrado para poder realizar funciones y guardar su información
+     */
+    public static void obtenerInformacion(double historialPrecioCompra[], int historialIdCliente[],int contador, menusClientes menuClientes1) {
         historialPrecioCompra[contador] = menuClientes1.productos2.getTotalCuenta();
         historialIdCliente[contador] = menuClientes1.productos2.getIdCliente();
 
