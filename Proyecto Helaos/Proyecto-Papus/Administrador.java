@@ -1,8 +1,7 @@
 public class Administrador {
     CajaDeHerramientas ch = new CajaDeHerramientas();
     Productos productos = new Productos();
-    menusClientes mc = new menusClientes();
-     
+    menusClientes menusCliente = new menusClientes();
 
     private int pass_Administrador;
     private String semilla = "papus@";
@@ -14,24 +13,9 @@ public class Administrador {
     private double historialPrecioCompraAdmin[] ;
     private int historialIdClienteAdmin[] ;
 
-    
-
-    
-    
-
-    public void setnumeroDeClientes(int numeroDeClientes) {
-        this.numeroDeClientes = numeroDeClientes;
-    }
-
-    public void setHistorialPrecioCompraAdmin(double[] historialPrecioCompraAdmin) {
-        this.historialPrecioCompraAdmin = historialPrecioCompraAdmin;
-    }
-
-    public void setHistorialIdClienteAdmin(int[] historialIdClienteAdmin) {
-        this.historialIdClienteAdmin = historialIdClienteAdmin;
-    }
-
-    public void ingresoAdministrador(menusClientes menuCliente) {
+ 
+    public void ingresoAdministrador(menusClientes menuCliente) 
+    {
         pass_Administrador = ch.pedirNumero();
         if (pass_Administrador == 1233) {
             System.out.println("Acceso válido");
@@ -41,7 +25,8 @@ public class Administrador {
         }
     }
 
-    public void menuOpcionesAdministrador(menusClientes menuCliente) {
+    public void menuOpcionesAdministrador(menusClientes menuCliente) 
+    {
         int opcion;
         String palabraSegura;
         
@@ -72,7 +57,7 @@ public class Administrador {
                     System.out.println("Mostrando inventario");
                     System.out.println("Seleccione lo que desea cambiar");
 
-                    productos.cambiarPrecioProductos();
+                    menuCliente.productos2.cambiarPrecioProductos();
 
                 } else System.out.println("Ingrese la palabra segura (semilla)");
 
@@ -80,15 +65,16 @@ public class Administrador {
                 case 2:
                     System.out.println("Estas modificando el inventario");
                     System.out.println("Ingresa la palabra clave para continuar");
-
                     palabraSegura = ch.pedirString();
+                    
 
                 if (semilla.equals(palabraSegura)) 
                 {
                     System.out.println("Mostrando inventario");
                     System.out.println("Seleccione lo que desea cambiar");
 
-                    productos.cambiarNombreProductos();
+                    menuCliente.productos2.cambiarNombreProductos();
+                  
 
                 } else System.out.println("Ingrese la palabra segura (semilla)");
       
@@ -265,5 +251,18 @@ public class Administrador {
         System.out.println("Cliente restablecido...");
 
     }
+    
+    public void setnumeroDeClientes(int numeroDeClientes) {
+        this.numeroDeClientes = numeroDeClientes;
+    }
+
+    public void setHistorialPrecioCompraAdmin(double[] historialPrecioCompraAdmin) {
+        this.historialPrecioCompraAdmin = historialPrecioCompraAdmin;
+    }
+
+    public void setHistorialIdClienteAdmin(int[] historialIdClienteAdmin) {
+        this.historialIdClienteAdmin = historialIdClienteAdmin;
+    }
+
 }
 

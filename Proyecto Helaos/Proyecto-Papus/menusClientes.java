@@ -1,17 +1,12 @@
-import java.lang.reflect.Array;
+
 
 public class menusClientes {
     CajaDeHerramientas ch = new CajaDeHerramientas();
     Productos productos2 = new Productos();
-    heladosMain main = new heladosMain();
-   
-    
-    
-   
-    
- 
-    
 
+   
+   
+    
 
     public void mostrarMenu() {
        
@@ -84,6 +79,8 @@ public class menusClientes {
                 break;
         }
     }
+
+  
 }
    
     
