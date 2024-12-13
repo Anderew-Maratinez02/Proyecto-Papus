@@ -1,32 +1,19 @@
 public class Administrador {
     CajaDeHerramientas ch = new CajaDeHerramientas();
+    Productos productos = new Productos();
     menusClientes menusCliente = new menusClientes();
 
-    private int pass_Administrador; // contraseña administrador
-    private String semilla = "papus@"; // Contraseña semilla
+    private int pass_Administrador;
+    private String semilla = "papus@";
 
     
-     /** 
-     * 
-     * @param numeroDeClientes
-     * @param historialPrecioCompraAdmin
-     * @param historialIdClienteAdmin
-     * 
-     * @param setnumeroDeClientes
-     * @param setHistorialPrecioCompraAdmin
-     * @param setHistorialIdClienteAdmin
-     * 
-     * 
-     * Estos atributos guardarán los registros del class MenuClientes que son recogidos a traves del main
-     * en el metodo obtenerInformacion y sus correspondientes setters empleados en el main
-     */
 
     private int numeroDeClientes = 0;
     private double historialPrecioCompraAdmin[] ;
     private int historialIdClienteAdmin[] ;
 
  
-    public void ingresoAdministrador(menusClientes menuCliente)//metodo para introducir una contraseña 
+    public void ingresoAdministrador(menusClientes menuCliente) 
     {
         pass_Administrador = ch.pedirNumero();
         if (pass_Administrador == 1233) {
@@ -155,7 +142,10 @@ public class Administrador {
                     resetearUnSoloRegistro(); 
                     
                 } else System.out.println("!Aún no hay registros de clientes!");
-
+                
+                
+                    
+                    
                 break;
                 case 8:
                 if (numeroDeClientes > 0) 
@@ -166,8 +156,7 @@ public class Administrador {
                     modificarUnRegistro();
                     
                 } else System.out.println("!Aún no hay registros de clientes!");
-                   
- 
+
                 break;
                 case 9:
                 
@@ -227,12 +216,10 @@ public class Administrador {
             if (historialIdClienteAdmin[j] != 0)
             { 
                 System.out.println("Ciente º"+j+ "( #ID " + historialIdClienteAdmin[j] +" )"+ " " + historialPrecioCompraAdmin[j] + " $");
-                
             }
-            
         }
         System.out.println("-----------------------");
-        System.out.println("Elige Numero de Cliente (NO numero ID) para cambiar su ID Y CUENTA");
+        System.out.println("Elige Número de Cliente (NO numero ID) para cambiar su ID Y CUENTA");
         numPedido = ch.pedirNumero();
 
         System.out.println("Introduce nuevo ID del cliente");
@@ -253,13 +240,13 @@ public class Administrador {
         { 
             if (historialIdClienteAdmin[j] != 0)
             { 
-                System.out.println("Ciente º"+j+ "( #ID " + historialIdClienteAdmin[j] +" )"+ " " + historialPrecioCompraAdmin[j] + " $");
+                System.out.println("Cliente º"+j+ "( #ID " + historialIdClienteAdmin[j] +" )"+ " " + historialPrecioCompraAdmin[j] + " $");
                 
             }
             
         }
         System.out.println("-----------------------");
-        System.out.println("Elige Numero de Cliente (NO numero ID) para Restablecer su ID Y CUENTA");
+        System.out.println("Elige Número de Cliente (NO numero ID) para Restablecer su ID Y CUENTA");
         numPedido = ch.pedirNumero();
 
         historialIdClienteAdmin[numPedido] = 0;
