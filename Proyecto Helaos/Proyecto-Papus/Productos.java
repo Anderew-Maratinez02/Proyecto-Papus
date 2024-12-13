@@ -100,13 +100,28 @@ public class Productos {
 
     }
 
-    public void getCuentaCliente() {
-        for (int i = 0; i < cuenta.length; i++) {
+    public void sumarTotalCuenta ()
+    {
+        for (int i = 0; i < cuenta.length; i++) 
+        {
+        totalCuenta += cuenta[i];
+        }
+
+    }
+
+    public void soloMostrarCuenta ()
+    {
+        for (int i = 0; i < cuenta.length; i++) 
+        {if (NomDeProductosComprados[i] != null && cuenta[i] != 0){
             System.out.println(NomDeProductosComprados[i] + " " + cuenta[i]);
             totalCuenta += cuenta[i];
-        }
-        System.out.println("Tu cuenta es de = " + totalCuenta);
-
+        }}
+            System.out.println("Tu cuenta es de = " + totalCuenta);
+            totalCuenta = 0; 
+    }
+    public double getCuentaCliente() {
+        
+        return totalCuenta;
     }
 
     protected void cambiarNombreProductos() { // Esta funcion aun no esta en uso y podrias meterla en administrador borrar esta linea pera ahora no

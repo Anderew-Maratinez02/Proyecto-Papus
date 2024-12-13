@@ -5,16 +5,21 @@ public class heladosMain {
         Administrador menuAdministrador = new Administrador();
         Productos productos = new Productos();
 
+        int contador = 0;
 
-        menuMain(ch, menuClientes1, menuAdministrador, productos);
-           System.out.println(menuClientes1.productos.getIdCliente()); 
-           System.out.println(menuClientes1.productos.getTotalCuenta()); 
+
+        double historialPrecioCompra[] = new double[10] ;
+        int historialIdCliente[] = new int[10] ;
+
+        menuMain( contador,ch, menuClientes1, menuAdministrador, productos,historialPrecioCompra,historialIdCliente);
+          
     }
 
 
-    public static void menuMain(CajaDeHerramientas ch, menusClientes menuClientes1, Administrador menuAdministrador, Productos productos) {
+    public static void menuMain( int contador,CajaDeHerramientas ch, menusClientes menuClientes1, Administrador menuAdministrador, Productos productos, double historialPrecioCompra[], int historialIdCliente[]) {
         int numPedido = 0;
         
+
         System.out.println();
         System.out.println("¡Bienvenido a Heladeria Papus!");
 
@@ -36,11 +41,12 @@ public class heladosMain {
             if (numPedido > 3 || numPedido < 0) {
                 System.out.println("Opción inválida");
             }
-            elegirMenuMain(ch, numPedido, menuClientes1, menuAdministrador);
-            menuAdministrador.copiarCuenta();
-            menuAdministrador.mostrarHistorialDeVentas();
+            
            
-           
+            elegirMenuMain( ch, numPedido, menuClientes1, menuAdministrador);
+            obtenerInformacion(historialPrecioCompra, historialIdCliente, contador, productos, menuClientes1);
+           contador ++;
+           menuClientes1.productos2.resetearCuenta();
 
         } while (numPedido != 3 && numPedido < 3 && numPedido > 0);
 
@@ -67,17 +73,26 @@ public class heladosMain {
     }
 
 
-    public static void obtenerInformacion(double historialPrecioCompra[], int historialIdCliente[], int contadorArray, Productos productos, menusClientes menuClientes1) {
-        for (int j = 0; j < contadorArray;j++)
-        {
+    public static void obtenerInformacion(double historialPrecioCompra[], int historialIdCliente[],int contador, Productos productos, menusClientes menuClientes1) {
+        
 
         
 
-        historialPrecioCompra[j] = menuClientes1.productos.getTotalCuenta();
-        historialIdCliente[j] = menuClientes1.productos.getIdCliente();
-        System.out.println("Ciente #ID " + historialIdCliente[j] + " " + historialPrecioCompra[j] + " $");
+        historialPrecioCompra[contador] = menuClientes1.productos2.getTotalCuenta();
+        historialIdCliente[contador] = menuClientes1.productos2.getIdCliente();
+        
+        for (int j = 0; j < historialIdCliente.length;j++)
+        { 
+        if (historialIdCliente[j] != 0)
+            { 
+                System.out.println("Ciente #ID " + historialIdCliente[j] + " " + historialPrecioCompra[j] + " $");
+                
+            }
+            
+
         }
-        contadorArray ++;
+        System.out.println(contador);
+        
 
 
     }

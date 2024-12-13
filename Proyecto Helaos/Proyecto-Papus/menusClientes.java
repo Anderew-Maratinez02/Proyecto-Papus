@@ -1,6 +1,9 @@
 public class menusClientes {
     CajaDeHerramientas ch = new CajaDeHerramientas();
-    Productos productos = new Productos();
+    Productos productos2 = new Productos();
+    
+    
+   
     
     protected String arrayOpcionCliente[];
     protected int cantidadPersonas = cantidadPersonasEsperada(); //corregirrrr
@@ -17,7 +20,7 @@ public class menusClientes {
 
         ch.evitarSaltoDeEnteros();
         arrayOpcionCliente = new String[cantidadTemporal];
-        productos.darIdCliente();
+        productos2.darIdCliente();
         int numPedido = 0;
         for (int i = 0; i < arrayOpcionCliente.length; i++) {
             System.out.println("Cliente #" + (i + 1));
@@ -50,33 +53,36 @@ public class menusClientes {
                     System.out.println("Opción invalida");
                 }
 
-                elegirMenuClientes(numPedido, productos);
+                elegirMenuClientes(numPedido, productos2);
 
             } while (numPedido != 6 && numPedido < 6 && numPedido > 0);
+
+            productos2.sumarTotalCuenta();
+            
 
         }
     }
 
-    public static void elegirMenuClientes(int numPedido, Productos productos) {
+    public static void elegirMenuClientes(int numPedido, Productos productos2) {
         switch (numPedido) {
             case 1:
-                productos.getHelados();
+                productos2.getHelados();
                 break;
 
             case 2:
-                productos.getGranizados();
+                productos2.getGranizados();
                 break;
 
             case 3:
-                productos.getGofres();
+                productos2.getGofres();
                 break;
 
             case 4:
-                productos.getBebidas();
+                productos2.getBebidas();
                 break;
 
             case 5:
-                productos.getCuentaCliente();
+            productos2.soloMostrarCuenta();
                 break;
 
             default:
@@ -87,4 +93,13 @@ public class menusClientes {
     public int getCantidadPersonas() {
         return cantidadPersonas;
     }
+    public double getterTotalCuentaDeProductos ()
+    {
+        return productos2.getTotalCuenta();
+    }
+    public int getterIdClienteDeProductos ()
+    {
+        return productos2.getIdCliente();
+    }
+
 }
