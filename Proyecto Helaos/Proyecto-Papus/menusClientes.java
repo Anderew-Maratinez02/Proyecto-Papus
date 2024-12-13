@@ -1,14 +1,16 @@
+import java.lang.reflect.Array;
+
 public class menusClientes {
     CajaDeHerramientas ch = new CajaDeHerramientas();
     Productos productos2 = new Productos();
+   
     
     
    
     
     protected String arrayOpcionCliente[];
-    protected int cantidadPersonas = 0 ; //corregirrrr
-    protected int cantidadTemporal = cantidadPersonas;
-   
+    protected int cantidadPersonas = 0; //corregirrrr
+    protected int cantidadTemporal = cantidadPersonas; //no lo uso
 
     public int cantidadPersonasEsperada() {
         System.out.println("Ingresa cantidad de personas");
@@ -19,8 +21,7 @@ public class menusClientes {
 
     public void mostrarMenu() {
         cantidadPersonas = cantidadPersonasEsperada();
-        ch.evitarSaltoDeEnteros();
-        arrayOpcionCliente = new String[cantidadTemporal];
+        arrayOpcionCliente = new String[cantidadPersonas];
         productos2.darIdCliente();
         int numPedido = 0;
         for (int i = 0; i < arrayOpcionCliente.length; i++) {
@@ -46,7 +47,7 @@ public class menusClientes {
 
                 System.out.println("---------------");
                 System.out.println("6. Salir del menú y finalizar compra");
-
+                /// /quitar esto xd commit por commit erroneous
                 numPedido = ch.pedirNumero();
 
 
@@ -84,6 +85,7 @@ public class menusClientes {
 
             case 5:
             productos2.soloMostrarCuenta();
+           
                 break;
 
             default:
@@ -94,13 +96,6 @@ public class menusClientes {
     public int getCantidadPersonas() {
         return cantidadPersonas;
     }
-    public double getterTotalCuentaDeProductos ()
-    {
-        return productos2.getTotalCuenta();
-    }
-    public int getterIdClienteDeProductos ()
-    {
-        return productos2.getIdCliente();
-    }
+    
 
 }

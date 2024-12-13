@@ -2,7 +2,6 @@ public class Administrador {
     CajaDeHerramientas ch = new CajaDeHerramientas();
     Productos productos = new Productos();
     menusClientes mc = new menusClientes(); 
-    heladosMain main = new heladosMain();
 
     private int pass_Administrador;
     private String semilla = "papus@";
@@ -29,7 +28,7 @@ public class Administrador {
             System.out.println("Acceso válido");
             menuOpcionesAdministrador(menuCliente);
         } else {
-            System.out.println("Accseso no válido");
+            System.out.println("Acceso no válido");
         }
     }
 
@@ -38,9 +37,9 @@ public class Administrador {
         String palabraSegura;
         do {
             System.out.println("Ajustes del sistema\n"
-                    + "1. cambiar precios \n"
+                    + "1. Cambiar precios \n"
                     + "2. Mostrar promedio \n"
-                    + "3. total pedidos \n"
+                    + "3. Total pedidos \n"
                     + "4. Modificar inventario \n"
                     + "5. Salir");
             opcion = ch.pedirNumero();
@@ -66,13 +65,20 @@ public class Administrador {
                     break;
                 case 2:
                     System.out.println("Estás viendo el promedio");
+                    System.out.println("El promedio de las ganancias es \n"); //Esto falta
 
                     break;
                 case 3:
                     System.out.println("1");
+
                     System.out.println("Estás viendo la cantidad de pedidos");
                    // da error System.out.println(menuCliente.getCantidadPersonas());
+
+                    System.out.println("Estás viendo la cantidad de clientes");
+                    System.out.println(menuCliente.getCantidadPersonas());
+
                     System.out.println("para pensar");
+                    /// /quitar esto xd commit por commit erroneous
                     break;
                 case 4:
                     System.out.println("Estas modificando el inventario");
@@ -92,41 +98,15 @@ public class Administrador {
                     break;
                 case 5:
                     System.out.println("Estás saliendo del apartado del administrador");
+                    /// /quitar esto xd commit por commit erroneous
                     break;
                 default:
-                    System.out.println("Opcion no válida");
+                    System.out.println("Opción no válida");
             }
         } while (opcion != 5);
-
 
     }
 
     
-
-    public void obtenerInformacion() {
-        for (int j = 0; j < 10;j++)
-        {
-            historialPrecioCompra[contador] = mc.productos2.getTotalCuenta();
-            historialIdCliente[contador] =  mc.productos2.getIdCliente();
-            
-            System.out.println(contador);
-
-            if (historialIdCliente[j] != 0)
-            { 
-                System.out.println("Ciente #ID " + historialIdCliente[j] + " " + historialPrecioCompra[j] + " $");
-        
-            }
-
-       
-        }
-        contador++;
-    }
-
-    public void mostrarHistorialDeVentas() {
-        for (int i = 0; i < historialIdCliente.length; i++) {
-            System.out.println("Ciente ID " + historialIdCliente[i] + " " + historialPrecioCompra[i] + " $");
-
-        }
-    }
 }
 

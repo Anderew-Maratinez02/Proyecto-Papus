@@ -5,8 +5,8 @@ public class heladosMain {
         Administrador menuAdministrador = new Administrador();
         Productos productos = new Productos();
 
-        int contador = 0;
 
+        int contador = 0;
 
         double historialPrecioCompra[] = new double[10] ;
         int historialIdCliente[] = new int[10] ;
@@ -21,7 +21,7 @@ public class heladosMain {
         
 
         System.out.println();
-        System.out.println("¡Bienvenido a Heladeria Papus!");
+        System.out.println("¡Bienvenido a Heladería Papus!");
 
         
 
@@ -69,7 +69,7 @@ public class heladosMain {
                 System.out.println("Saliendo del menú");
                 break;
             default:
-                System.out.println("Opcion no válida");
+                System.out.println("Opción no válida");
                 break;
         }
     }
@@ -80,9 +80,9 @@ public class heladosMain {
 
         
 
+
         historialPrecioCompra[contador] = menuClientes1.productos2.getTotalCuenta();
         historialIdCliente[contador] = menuClientes1.productos2.getIdCliente();
-        
 
 
     }
