@@ -4,8 +4,7 @@ public class heladosMain {
         menusClientes menuClientes1 = new menusClientes();
         Administrador menuAdministrador = new Administrador();
         Productos productos = new Productos();
-
-        double historialPrecioCompra[] = new double[3];
+        double[] historialPrecioCompra = new double[3];
         int historialIdCliente[] = new int[25];
 
         int contadorArray = 0;
@@ -18,7 +17,7 @@ public class heladosMain {
 
     public static void menuMain(CajaDeHerramientas ch, menusClientes menuClientes1, Administrador menuAdministrador, Productos productos, double historialPrecioCompra[], int historialIdCliente[], int contadorArray) {
         System.out.println();
-        System.out.println("¡Bienvenido a Heladeria Papus!");
+        System.out.println("¡Bienvenido a Heladería Papus!");
 
         int numPedido = 0;
 
@@ -62,7 +61,7 @@ public class heladosMain {
                 System.out.println("Saliendo del menú");
                 break;
             default:
-                System.out.println("Opcion no válida");
+                System.out.println("Opción no válida");
                 break;
         }
     }
@@ -75,7 +74,8 @@ public class heladosMain {
 
         contadorArray += 1;
         for (int i = 0; i < historialPrecioCompra.length; i++) {
-            System.out.println("Ciente º " + historialIdCliente[i] + " " + historialPrecioCompra[i] + " $");
+            System.out.println("Estás aquí");
+            System.out.println("Cliente º " + historialIdCliente[i] + " " + historialPrecioCompra[i] + " $");
 
         }
 
@@ -83,8 +83,8 @@ public class heladosMain {
 
     public static void mostrarHistorialDeVentas(double historialPrecioCompra[], int historialIdCliente[], Productos productos) {
         for (int i = 0; i < historialPrecioCompra.length; i++) {
-            System.out.println("Ciente º " + historialIdCliente[i] + " " + historialPrecioCompra[i] + " $");
-
+            System.out.println("Cliente º " + historialIdCliente[i] + " " + historialPrecioCompra[i] + " $");
+            /// /quitar esto xd commit por commit erroneous
         }
     }
 }
