@@ -3,29 +3,21 @@ import java.lang.reflect.Array;
 public class menusClientes {
     CajaDeHerramientas ch = new CajaDeHerramientas();
     Productos productos2 = new Productos();
+    heladosMain main = new heladosMain();
    
     
     
    
     
-    protected String arrayOpcionCliente[];
-    protected int cantidadPersonas = 0; //corregirrrr
-    protected int cantidadTemporal = cantidadPersonas; //no lo uso
-
-    public int cantidadPersonasEsperada() {
-        System.out.println("Ingresa cantidad de personas");
-        cantidadPersonas = ch.pedirNumero();
-        return cantidadPersonas;
-    }
+ 
+    
 
 
     public void mostrarMenu() {
-        cantidadPersonas = cantidadPersonasEsperada();
-        arrayOpcionCliente = new String[cantidadPersonas];
+       
         productos2.darIdCliente();
         int numPedido = 0;
-        for (int i = 0; i < arrayOpcionCliente.length; i++) {
-            System.out.println("Cliente #" + (i + 1));
+    
             do {
                 System.out.println(" ");
                 System.out.println("elige un apartado del menú del 1 al 5");
@@ -47,7 +39,7 @@ public class menusClientes {
 
                 System.out.println("---------------");
                 System.out.println("6. Salir del menú y finalizar compra");
-                /// /quitar esto xd commit por commit erroneous
+               
                 numPedido = ch.pedirNumero();
 
 
@@ -63,7 +55,7 @@ public class menusClientes {
             
 
         }
-    }
+    
 
     public static void elegirMenuClientes(int numPedido, Productos productos2) {
         switch (numPedido) {
@@ -92,10 +84,9 @@ public class menusClientes {
                 break;
         }
     }
-
-    public int getCantidadPersonas() {
-        return cantidadPersonas;
-    }
+}
+   
+    
     
 
-}
+
